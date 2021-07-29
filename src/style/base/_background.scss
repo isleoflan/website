@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+.background{
+    &-yellow{
+      color: $font-light-color;
+      @include linear-gradient-yellow;
+    }
+    &-blue{
+      color: $font-light-color;
+      @include linear-gradient-blue;
+    }
+  }

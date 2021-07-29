@@ -1,0 +1,39 @@
+---
+import Navigation from './Navigation.astro';
+---
+<style lang="scss">
+    @use "../style/abstracts" as *;
+    
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        float: left;
+        padding: 20px 0;
+        z-index: 100;
+
+        @include linear-gradient-blue();
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo{
+        width: 102px;
+        @include for-desktop-up{
+            width: 176px;
+        }
+    }
+</style>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="/" title="Isle of LAN">
+                <img src="/images/iol_white.svg" alt="Isle of LAN">
+            </a>
+        </div>
+        <Navigation/>
+    </div>
+</header>
