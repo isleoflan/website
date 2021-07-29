@@ -1,0 +1,47 @@
+---
+import {Markdown, Layout} from 'astro/components';
+---
+<style lang="scss">
+    @use "../style/elements/markdown";
+
+    .quick-informations{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 100px 0;
+    }
+    h2{
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+</style>
+
+<section class="quick-informations background-yellow">
+    <div class="container container--flex">
+        <div class="container__inner container__inner--column">
+        <Markdown>
+            ## Infos - quick & snappy
+            <article class="card">
+                ### IOL – was ist das?
+
+                IOL steht für “Isle of LAN”. Dies ist der Name der Veranstaltung, welche der gleichnamige Verein organisiert und durchführt. Isle of LAN ist eine jährlich stattfindende LAN-Party, welche sich zum Ziel gesetzt hat, den E-Sport in der Region Ostschweiz bekannter zu machen und die gesellschaftliche Akzeptanz zu fördern.
+            </article>
+            <article class="card">
+                ### Wann und wo findet das statt?
+
+                Die Isle of LAN - "Crowned" Findet im Oktober im Auholzsaal in Sulgen statt.
+            </article>
+            <article class="card">
+                ### Wie lange darf ich denn dort bleiben?
+
+                Das Event erstreckt sich über 3 Tage. Bevor du fragst: Ja, du kannst dort schlafen.
+            </article>
+        </Markdown>
+        </div>
+    </div>
+</section>
+
+
+
+
