@@ -1,0 +1,37 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    image?: string;
+    type?: string;
+    canonicalURL: string;
+}
+
+const {title, description, image, type, next, prev, canonicalURL} = Astro.props as Props;
+---
+
+<!-- Common -->
+<meta charset="utf-8">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap.xml">
+
+<!-- SEO -->
+<link rel="canonical" href={canonicalURL}>
+
+<!-- OpenGraph -->
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+{image && (<meta property="og:image" content={new URL(image, canonicalURL)}>)}
+
+<!-- Twitter -->
+<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'}>
+<meta name="twitter:site" content="@astro">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+{image && (<meta name="twitter:image" content={image}>)}
