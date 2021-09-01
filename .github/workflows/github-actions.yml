@@ -1,7 +1,8 @@
 name: Deploy Isle of LAN website
 on: 
-  merge: 
-    branches: [master]
+  push: 
+    branches: 
+     - master
 
 jobs:
   build: 
