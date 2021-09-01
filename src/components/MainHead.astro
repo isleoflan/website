@@ -18,7 +18,9 @@ const {title, description, image, type, next, prev, canonicalURL} = Astro.props 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Changa:wght@300;700&display=swap">
 
-<link rel="stylesheet" href="/style/layout.css">
+<style lang="scss" global>
+   @use '../style/base';
+</style>
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml">
@@ -33,7 +35,7 @@ const {title, description, image, type, next, prev, canonicalURL} = Astro.props 
 
 <!-- Twitter -->
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'}>
-<meta name="twitter:site" content="@astro">
+<meta name="twitter:site" content="@isleoflan">
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
 {image && (<meta name="twitter:image" content={image}>)}
