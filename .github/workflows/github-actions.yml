@@ -2,7 +2,7 @@ name: Deploy Isle of LAN website
 on: 
   push: 
     branches: 
-     - master
+      - master
 
 jobs:
   build: 
