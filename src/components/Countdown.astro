@@ -1,0 +1,169 @@
+---
+
+---
+<style lang="scss">
+    @use '../style/abstracts' as *;
+    .countdown{
+        width: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__item{
+            position: relative;
+            &__number,
+            &__description{
+                display: block;
+                text-align: center;
+            }
+
+            &__number{
+                font-size: 2rem;
+                font-weight: $font-bold;
+                min-width: 70px;
+
+                @include animate(opacity);
+
+                &--inactive{
+                    opacity: 0;
+                }
+                &--active{
+                    opacity: 1;
+                }
+                @include for-tablet-portrait-up{
+                    font-size: 3.5rem;
+                    min-width: 120px;
+                }
+                @include for-big-desktop-up{
+                    min-width: 125px;
+                    font-size: 5rem;
+                }
+            }
+
+            &__description{
+                font-weight: $font-bold;
+                color: rgba($font-light-color, 0.4);
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                @include for-tablet-portrait-up{
+                    font-size: 1.1rem;
+                }
+                @include for-big-desktop-up{
+                    font-size: 1.3rem;
+                }
+            }
+
+        }
+    }
+</style>
+<div class="countdown">
+    <div class="countdown__item">
+        <span id="countdown-days" class="countdown__item__number countdown__item__number--inactive">
+        00
+        </span>
+        <span class="countdown__item__description">
+        Tage
+        </span>
+    </div>
+    <div class="countdown__item">
+        <span id="countdown-hours" class="countdown__item__number countdown__item__number--inactive">
+        00
+        </span>
+        <span class="countdown__item__description">
+        Stunden
+        </span>
+    </div>
+    <div class="countdown__item">
+        <span id="countdown-minutes" class="countdown__item__number countdown__item__number--inactive">
+        00
+        </span>
+        <span class="countdown__item__description">
+        Minuten
+        </span>
+    </div>
+    <div class="countdown__item">
+        <span id="countdown-seconds" class="countdown__item__number countdown__item__number--inactive">
+        00
+        </span>
+        <span class="countdown__item__description">
+        Sekunden
+        </span>
+    </div>
+</div>
+
+<script>
+    const EVENT_DATE = new Date('2022-04-08Z17:00:00+01:00');
+
+    function Countdown(date){
+        this.toDate = new Date(date);
+        this.countdownToDate = this.toDate.getTime();
+
+        // elements
+        this.$days  = document.getElementById('countdown-days');
+        this.$hours = document.getElementById('countdown-hours');
+        this.$minutes = document.getElementById('countdown-minutes');
+        this.$seconds = document.getElementById('countdown-seconds');
+
+
+        this.tick();
+
+        this.$days.classList.remove('countdown__item__number--inactive');
+        this.$hours.classList.remove('countdown__item__number--inactive');
+        this.$minutes.classList.remove('countdown__item__number--inactive');
+        this.$seconds.classList.remove('countdown__item__number--inactive');
+
+        this.$days.classList.add('countdown__item__number--active');
+        this.$hours.classList.add('countdown__item__number--active');
+        this.$minutes.classList.add('countdown__item__number--active');
+        this.$seconds.classList.add('countdown__item__number--active');
+
+        this.interval = setInterval(this.tick.bind(this), 1000);
+
+
+    }
+
+    Countdown.prototype.tick = function(){
+        var now = new Date().getTime();
+
+        var days = 0,
+            hours = 0,
+            minutes = 0,
+            seconds = 0;
+
+        var distance = this.countdownToDate - now;
+        if(distance >= 0){
+            days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+            hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        }else{
+            clearInterval(this.interval);
+        }
+
+        if(days < 10){
+            days = '0'+days;
+        }
+        if(hours < 10){
+            hours = '0'+hours;
+        }
+        if(minutes < 10){
+            minutes = '0'+minutes;
+        }
+        if(seconds < 10){
+            seconds = '0'+seconds;
+        }
+
+        this.$days.innerHTML = days;
+        this.$hours.innerHTML = hours;
+        this.$minutes.innerHTML = minutes;
+        this.$seconds.innerHTML = seconds;
+    };
+
+
+    var countdown = new Countdown(EVENT_DATE);
+</script>
