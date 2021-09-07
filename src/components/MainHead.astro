@@ -7,13 +7,15 @@ export interface Props {
     canonicalURL: string;
 }
 
-const {title, description, image, type, next, prev, canonicalURL} = Astro.props as Props;
+const {title, description, keywords, image, type, next, prev, canonicalURL} = Astro.props as Props;
 ---
 
 <!-- Common -->
 <meta charset="utf-8">
 <title>{title}</title>
 <meta name="description" content={description}>
+<meta name="keywords" content={keywords}>
+<link rel="icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Changa:wght@300;700&display=swap">

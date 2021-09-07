@@ -1,0 +1,53 @@
+[
+    [
+        {
+            "name": "IOL 2020",
+            "link": "/informationen.html",
+            "sub": [
+                {
+                    "name": "Turniere",
+                    "link": "/informationen/turniere.html"
+                },
+                {
+                    "name": "Teilnehmer",
+                    "link": "/informationen/teilnehmer.html"
+                },
+                {
+                    "name": "Hallenplan",
+                    "link": "/informationen/hallenplan.html"
+                },
+                {
+                    "name": "Sponsoren",
+                    "link": "/informationen/sponsoren.html"
+                }
+            ]
+        },
+        {
+            "name": "FAQ",
+            "link": "/frequently-asked-questions.html",
+            "sub": [
+                {
+                    "name": "Sicherheit",
+                    "link": "/scanner.html"
+                }
+            ]
+        },
+        {
+            "name": "Helfer werden",
+            "link": "https://forms.gle/RJHeKKEtoprJSFtk9",
+            "target": "_blank",
+            "rel": "noopener"
+        }
+    ],
+    [
+        {
+            "name": "Dashboard",
+            "link": "https://user.isleoflan.ch/",
+            "target": "_blank"
+        },
+        {
+            "name": "Tickets",
+            "link": "/tickets.html"
+        }
+    ]
+]

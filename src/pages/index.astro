@@ -4,14 +4,30 @@ import MainHeader from '../components/MainHead.astro';
 import Header from '../layouts/Header.astro';
 import NextEventHeader from '../layouts/NextEventHeader.astro';
 import QuickInformations from '../layouts/QuickInformations.astro';
+import Footer from '../layouts/Footer.astro';
+
+const title = `Isle Of LAN 2022`;
+const description = ``;
+const keywords = ['Isle of LAN', 'Sulgen'];
+const type = 'website';
+const canonicalURL = Astro.href;
 ---
 <html lang="de">
 <head>
-   <MainHeader/>
+   <MainHeader
+      title={title}
+      description={description}
+      keywords={keywords.join(', ')}
+      image=""
+      type={type}
+      canonicalURL={canonicalURL}
+   />
 </head>
 <body>
    <Header/>
    <NextEventHeader/>
    <QuickInformations/>
+
+   <Footer/>
 </body>
 </html>
