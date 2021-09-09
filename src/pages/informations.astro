@@ -1,0 +1,30 @@
+---
+// Component Imports
+import MainHeader from '../components/MainHead.astro';
+import Header from '../layouts/Header.astro';
+import QuickInformations from '../layouts/QuickInformations.astro';
+import Footer from '../layouts/Footer.astro';
+
+const title = `Informationen`;
+const description = ``;
+const keywords = ['Informationen','Isle of LAN', 'Sulgen'];
+const type = 'website';
+const canonicalURL = Astro.href;
+---
+<html lang="de">
+<head>
+   <MainHeader
+      title={title}
+      description={description}
+      keywords={keywords.join(', ')}
+      image=""
+      type={type}
+      canonicalURL={canonicalURL}
+   />
+</head>
+<body>
+   <Header/>
+   <QuickInformations/>
+   <Footer/>
+</body>
+</html>

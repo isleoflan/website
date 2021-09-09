@@ -2,33 +2,33 @@
     [
         {
             "name": "IOL 2020",
-            "link": "/informationen.html",
+            "link": "/informations",
             "sub": [
                 {
                     "name": "Turniere",
-                    "link": "/informationen/turniere.html"
+                    "link": "/informations/tournaments"
                 },
                 {
                     "name": "Teilnehmer",
-                    "link": "/informationen/teilnehmer.html"
+                    "link": "/informations/participants"
                 },
                 {
                     "name": "Hallenplan",
-                    "link": "/informationen/hallenplan.html"
+                    "link": "/informations/location"
                 },
                 {
                     "name": "Sponsoren",
-                    "link": "/informationen/sponsoren.html"
+                    "link": "/informations/sponsors"
                 }
             ]
         },
         {
             "name": "FAQ",
-            "link": "/frequently-asked-questions.html",
+            "link": "/frequently-asked-questions",
             "sub": [
                 {
                     "name": "Sicherheit",
-                    "link": "/scanner.html"
+                    "link": "/scanner"
                 }
             ]
         },
@@ -47,7 +47,7 @@
         },
         {
             "name": "Tickets",
-            "link": "/tickets.html"
+            "link": "/tickets"
         }
     ]
 ]

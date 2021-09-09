@@ -108,7 +108,7 @@
       <ul>
           {navigationItems.map((item) => (
               <li class={setSubLevelClass(item)}>
-                  <a href={item.link} rel={item.rel} title={item.name} class={shouldAppendActiveClass(item) && 'active'}>{item.name}</a>
+                  <a href={item.link} rel={item.rel} title={item.name} target={item.target && item.target} class={shouldAppendActiveClass(item) && 'active'}>{item.name}</a>
                     {item.sub && <ul>
                       {item.sub?.map((subItem) => (
                         <li>
