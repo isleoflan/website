@@ -1,0 +1,271 @@
+---
+import {Markdown, Layout} from 'astro/components';
+---
+<style lang="scss">
+    @use "../style/elements/markdown";
+
+    .faq{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 100px 0;
+    }
+    h2{
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+</style>
+
+<section class="faq background-yellow">
+    <div class="container container--flex">
+        <div class="container__inner container__inner--column">
+        <Markdown>
+            ## Frequently Asked Questions
+            <article class="card">
+                ### IOL – was ist das?
+
+                IOL steht für “Isle of LAN”. Dies ist der Name der Veranstaltung, 
+                welche der gleichnamige Verein organisiert und durchführt. 
+                Isle of LAN ist eine jährlich stattfindende LAN-Party, welche sich zum 
+                Ziel gesetzt hat, den E-Sport in der Region Ostschweiz bekannter zu 
+                machen und die gesellschaftliche Akzeptanz zu fördern.
+            </article>
+
+            <article class="card">
+                ### Was ist eine LAN-Party?
+
+                Bei einer LAN-Party sitzen gleichgesinnte Personen zusammen in einem Raum und 
+                spielen auf Ihren Computern Games. Der Sinn hierbei liegt darin, dass man sich 
+                untereinander austauschen kann. Sei dies mit den Gegnern oder mit dem eigenen 
+                Team. LAN-Parties waren anfangs der 2000er sehr beliebt und feiern nun - 
+                endlich - ein Revival. Komm vorbei und du wirst merken, was LAN-Parties so 
+                einzigartig macht!
+            </article>
+
+            <article class="card">
+                ### Wie kann ich teilnehmen?
+
+                Du bist dabei, wenn du dir ein [Ticket](/ticket) 
+                kaufst und den Ticketpreis bezahlt hast!
+            </article>
+
+            ## Helfer
+
+            <article class="card">
+                ### Kann ich helfen?
+
+                Ja, fülle hierzu [dieses Formular](https://forms.gle/RJHeKKEtoprJSFtk9) aus.
+            </article>
+            
+            <article class="card">
+                ### Wie lange muss ich arbeiten?
+
+                 Das können wir dir leider noch nicht genau sagen. 
+                 Aber wir können dir sagen, dass in Schichten, welche nicht all zu lange 
+                 dauern, gearbeitet wird. Wenn du nicht arbeitest, kannst du gerne zocken!
+            </article>
+
+            <article class="card">
+                ### Was bekomme ich dafür?
+
+                Du kriegst ein Staff-Shirt, ein Isle of LAN Ticket und Verpflegung 
+                während deinen Schichten.
+            </article>
+
+            ## Teilnahme
+
+            <article class="card">
+                ### Gibt es ein Mindestalter, um an der Isle of LAN teilzunehmen?
+
+                Das Mindestalter, um an der Isle of LAN teilzunehmen beträgt 16 Jahre. 
+                Wenn du unter 18 Jahre alt bist, musst du ein Formular mitbringen, 
+                welches deine Eltern unterschreiben müssen. Dieses wird bei der 
+                Bestellbestätigung mitgeschickt.
+            </article>
+            
+            <article class="card">
+                ### Was muss ich mitnehmen?
+
+                Mitbringen musst du alles, was du zum spielen brauchst! 
+                Deinen Computer, Bildschrim, Maus, Tastatur und Headset. 
+                Ein Netzwerkkabel und Strom ist an deinem Platz vorverlegt, 
+                um das musst du dich nicht kümmern. Bringe zusätzlich einen 
+                Schlafsack und eine Unterlage zum Schlafen mit.
+            </article>
+
+            <article class="card">
+                ### Was darf ich nicht mitnehmen?
+
+                Lass bitte alles zu Hause, was viel Strom verbraucht. 
+                Zum Beispiel Klimaanlagen, Toaster, Kühlschränke aber auch USVs.
+                
+                Ebenfalls bitten wir dich, keine Lautsprecher mitzunehmen.
+                
+                Wenn du dir nicht sicher bist, ob du etwas mitnehmen solltest, 
+                schreibe uns kurz an.
+            </article>
+
+            <article class="card">
+                ### Muss ich etwas zu Essen mitnehmen, oder kann ich mich vor Ort verpflegen?
+
+                Wir bieten dir gutes aber günstiges Essen an, welches du jedoch bereits im 
+                Voraus bestellen musst. Sich in Sulgen zu verpflegen, 
+                sollte dich allerdings auch nicht vor eine all zu grosse Hürde stellen. 
+                In Sulgen gibt es mehrere Bäckereien, Dönerläden, Pizzerien, Migros und Coop. 
+                Falls du einen Tipp brauchst, sprich uns an!
+            </article>
+
+            <article class="card">
+                ### Kann man dort schlafen?
+
+                Ja, es gibt eine abgetrennte Schlafhalle. 
+                Bringe bitte deinen eigenen Schlafsack und Unterlage mit.
+            </article>
+
+            <article class="card">
+                ### Welche Spiele kann ich an der Isle of LAN spielen?
+
+                Grundsätzlich kannst du spielen, was du möchtest. 
+                Du kannst problemlos 3 Tage Solitär spielen. Cooler ist es 
+                allerdings, wenn du mit den Personen, mit welchen du gerade im 
+                selben Raum sitzt, das gleiche Spiel spielst.
+                
+                Wir stellen mehrere Gameserver zur Verfügung, es wäre cool, wenn du 
+                diese verwendest. Unter anderem stellen wir folgende Gameserver bereit:
+                
+                - Counter-Strike: Global Offensive (Wettkampf)
+                - Counter-Strike: Global Offensive (Kriegsspiele)
+                - Minecraft Creative und Survival
+                - Trackmania
+                - Team Fortress 2
+                - wenn du gerne einen Server zu einem anderen Spiel hättest, schreib uns an!
+                
+                Wenn du aber trotzdem nicht weisst, was oder mit wem du spielen sollst, 
+                klick doch mal in unser Discord und du findest bestimmt 
+                jemanden, mit dem du spielen kannst.
+            </article>
+
+            <article class="card">
+                ### Kann ich ein Werbebanner meines Teams aufstellen?
+
+                Ja gerne, aber schreib uns bitte zuerst an, damit wir das organisatorische klären können!
+            </article>
+
+            <article class="card">
+                ### Dürfen wir unsere Team-Shirts tragen?
+
+                Selbstverständlich und gerne!
+            </article>
+
+            ## Infrastruktur
+
+            <article class="card">
+                ### Ist Internet vorhanden?
+
+                Ja, es ist Internet vorhanden. Wir haben für diese erste Ausgabe der 
+                Isle of LAN eine Leitung mit 400/100Mbps. Wir wissen, dass dies nicht 
+                extrem schnell ist. Wir stellen aber Caching-Server für alle grossen 
+                Games zur Verfügung, damit die Leitung nicht mit Updates blockiert wird. 
+                Ebenfalls wird sämtlicher Game-Traffic priorisiert, dass es zu keinen Lags 
+                kommt.
+                
+                Falls es Probleme gibt, sind wir sofort zur Stelle!
+            </article>
+
+            <article class="card">
+                ### Kann ich auch mal unter die Dusche hüpfen?
+
+                Duschen sind vorhanden. Wenn du duschen möchtest, melde dich kurz beim 
+                Infopoint in der Admin-Area.
+            </article>
+
+            <article class="card">
+                ### Muss ich mein eigenes LAN-Kabel mitnehmen?
+
+                Nein. Es ist ein LAN-Kabel für deinen Platz vorverlegt. 
+                Ebenfalls ist eine Steckerleiste mit 3 Strom-Anschlüssen vorverlegt. 
+                Bitte beachte, dass das Netzwerk nicht ohne schriftliche Genehmigung 
+                unserer Seite erweitert werden darf. Das bedeutet, dass du keinen Switch, 
+                Access Point oder ein ähnliches Gerät anschliessend darfst.
+                
+                Ebenfalls bitten wir dich, nicht zu viele Stromverbraucher anzuschliessen. 
+                Grundsätzlich ist es vorgesehen, dass du deinen Computer und einen 
+                Bildschirm anschliesst.
+            </article>
+
+            <article class="card">
+                ### Darf ich einen Server mitbringen
+
+                Sehr gerne. Schreib uns hierzu doch kurz vorher an, damit wir dir 
+                einen Platz im Server-Rack reservieren können.
+            </article>
+
+            <article class="card">
+                ### Wie laut dürfen meine Lautsprecher maximal sein?
+
+                Wir bitten dich, deine Lautsprecher zu Hause zu lassen und dein 
+                Headset einzupacken. Lautsprecher sind an der Isle of LAN 
+                nicht erlaubt und falls du doch welche mitbringst, werden wir dich 
+                bitten, diese wieder abzubauen. Wir möchten, dass jeder nur das hört, 
+                was er möchte.
+            </article>
+
+            ## Turniere
+
+            <article class="card">
+                ### Wie kann ich an einem Turnier teilnehmen?
+
+                Sobald die Turniere definitiv fixiert sind, wirst du einen 
+                Newsletter mit einem Link zur Turnieranmeldung erhalten. 
+                Damit du an einem Turnier teilnehmen kannst, musst du dich 
+                zuvor zwingend anmelden. Die Anmeldung ist bis 2 Stunden 
+                vor dem Turnierstart möglich.
+            </article>
+
+            ## Bargeldloses Bezahlen am Event
+
+            <article class="card">
+                ### Wie kaufe ich etwas am Kiosk?
+
+                Wenn du etwas am Kiosk kaufst, bezahlst du nicht mit Bargeld oder 
+                Karte, sondern mit deinem Badge, den du an deinem Eintrittsarmband 
+                hast. Du hältst diesen zum bezahlen einfach an das Bezahlterminal. 
+                So wollen wir die Abläufe beschleunigen und Diebstähle verhindern.
+            </article>
+
+            <article class="card">
+                ### Kann ich am Kiosk mit Bargeld oder Karte bezahlen?
+
+                Am Kiosk kannst du grundsätzlich nur mit deinem Badge bezahlen. 
+                Du kannst jedoch deinen Badge mit Bargeld oder Karte am Kiosk 
+                aufladen. Dies beschleunigt und erleichtert für alle den Bezahlprozess.
+                
+                Du kannst bald auch im Benutzerbereich der Webseite den Badge mit 
+                Kreditkarte oder PayPal aufladen.
+            </article>
+
+            <article class="card">
+                ### Wie funktioniert die Essensbestellung und -ausgabe?
+
+                Wenn du von unserem günstigen Catering profitieren möchtest, 
+                musst du das Essen im Voraus bestellen. Dies ist bis zu 3 Stunden 
+                vor der Essensausgabe möglich. Bestellen kannst du am Kiosk oder 
+                im Benutzerbereich.
+                
+                Wenn das Essen bereit ist, wirst du benachrichtigt und du kannst 
+                das Essen abholen. Bestätige noch, dass du berechtigt bist, 
+                das Essen abzuholen, indem du dein Armband bei der Ausgabe scannst.
+            </article>
+
+            <article class="card">
+                ### Was geschieht, wenn ich am Ende des Events noch Geld auf dem Badge habe?
+
+                Nach dem Event kannst du angeben, was mit dem Geld geschehen soll. 
+                Du kannst das Restguthaben entweder an eine IBAN überweisen lassen 
+                oder dem Verein als Spende überlassen.
+            </article>
+        </Markdown>
+        </div>
+    </div>
+</section>
