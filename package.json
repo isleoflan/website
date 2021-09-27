@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@astrojs/renderer-vue": "^0.1.7",
+    "@types/react": "^17.0.24",
     "astro": "^0.20.04"
   }
 }
