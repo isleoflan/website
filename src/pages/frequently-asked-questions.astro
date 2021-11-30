@@ -3,7 +3,10 @@
 import MainHeader from '../components/MainHead.astro';
 import Header from '../layouts/Header.astro';
 import NextEventHeader from '../layouts/NextEventHeader.astro';
-import FaqContent from '../layouts/FaqContent.astro';
+
+import CardContent from '../layouts/CardContent.astro';
+
+import Faq from '../content/cards/Faq.astro';
 import Footer from '../layouts/Footer.astro';
 
 const title = `Frequently asked questions`;
@@ -24,10 +27,10 @@ const canonicalURL = Astro.href;
    />
 </head>
 <body>
-   <Header/>
-
-    <FaqContent/>
-
-   <Footer/>
+   <Header />
+   <CardContent>
+      <Faq />
+   </CardContent>
+   <Footer />
 </body>
 </html>

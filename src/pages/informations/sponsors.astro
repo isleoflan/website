@@ -1,15 +1,15 @@
 ---
 // Component Imports
-import MainHeader from '@components/MainHead.astro';
-import Header from '@layouts/Header.astro';
-import CardContent from '@layouts/CardContent.astro';
-import Footer from '@layouts/Footer.astro';
+import MainHeader from '../../components/MainHead.astro';
+import Header from '../../layouts/Header.astro';
+import CardContent from '../../layouts/CardContent.astro';
+import Footer from '../../layouts/Footer.astro';
 
-import Informations from '@content/cards/Informations.astro';
+import Sponsors from '../../content/cards/Sponsors.astro';
 
-const title = `Informationen`;
+const title = `Sponsoren`;
 const description = ``;
-const keywords = ['Informationen','Isle of LAN', 'Sulgen'];
+const keywords = ['Sponsoren','Isle of LAN', 'Sulgen'];
 const type = 'website';
 const canonicalURL = Astro.href;
 ---
@@ -27,7 +27,7 @@ const canonicalURL = Astro.href;
 <body>
    <Header/>
    <CardContent>
-      <Informations/>
+      <Sponsors />
    </CardContent>
    <Footer/>
 </body>

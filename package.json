@@ -1,14 +1,29 @@
 {
-  "name": "@example/starter",
-  "version": "0.0.1",
+  "name": "@isleoflan/website",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start": "astro dev",
-    "build": "astro build"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "devDependencies": {
-    "@astrojs/renderer-vue": "^0.1.7",
-    "@types/react": "^17.0.24",
-    "astro": "^0.20.04"
+  "description": "> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isleoflan/website.git"
+  },
+  "keywords": [
+    "Website",
+    "IsleOfLan"
+  ],
+  "author": "YourBrainEatsYou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isleoflan/website/issues"
+  },
+  "homepage": "https://github.com/isleoflan/website#readme",
+  "dependencies": {
+    "astro": "^0.21.4"
   }
 }

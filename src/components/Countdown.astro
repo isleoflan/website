@@ -1,5 +1,5 @@
 ---
-
+import eventDate from '@content/event-date.json';
 ---
 
 <style lang="scss">
@@ -98,8 +98,8 @@
     </div>
 </div>
 
-<script>
-    const EVENT_DATE = new Date('2022-04-08Z17:00:00+01:00');
+<script define:vars={{eventDate}}>
+    const EVENT_DATE = eventDate.start;
 
     function Countdown(date){
         this.toDate = new Date(date);

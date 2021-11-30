@@ -1,10 +1,16 @@
 ---
 // Component Imports
-import MainHeader from '../components/MainHead.astro';
-import Header from '../layouts/Header.astro';
-import NextEventHeader from '../layouts/NextEventHeader.astro';
-import QuickInformations from '../layouts/QuickInformations.astro';
-import Footer from '../layouts/Footer.astro';
+
+import MainHeader from '@components/MainHead.astro';
+import Header from '@layouts/Header.astro';
+import NextEventHeader from '@layouts/NextEventHeader.astro';
+
+import CardContent from '@layouts/CardContent.astro';
+
+import Footer from '@layouts/Footer.astro';
+
+import QuickInformations from '@content/cards/QuickInformations.astro';
+
 
 const title = `Isle Of LAN 2022`;
 const description = ``;
@@ -27,7 +33,9 @@ const canonicalURL = Astro.href;
 <body>
    <Header/>
    <NextEventHeader/>
-   <QuickInformations/>
+   <CardContent>
+      <QuickInformations/>
+   </CardContent>
 
    <Footer/>
 </body>
