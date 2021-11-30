@@ -1,9 +1,22 @@
 ---
-    import Countdown from '../components/Countdown';
+import Countdown from '../components/Countdown.astro';
+import eventDate from '@content/event-date.json';
 
-    const title = 'Isle of LAN &ndash; "Crowned"';
-    const subtitle = 'Die LAN-Party in der Ostschweiz!';
-    const location = '16. - 18. Oktober 2020<br> im Auholzsaal in Sulgen';
+
+const title = 'Isle of LAN &ndash; "Crowned"';
+const subtitle = 'Die LAN-Party in der Ostschweiz!';
+
+const startDate = new Date(eventDate.start);
+const endDate = new Date(eventDate.end);
+
+
+
+const startDay = startDate.getDate();
+const endDay = endDate.getDate();
+const month = endDate.toLocaleString('default', { month: 'long' });
+const year = endDate.getFullYear();
+
+const location = `${startDay}. - ${endDay}. ${month} ${year}<br> im Auholzsaal in Sulgen`;
 ---
 <style lang="scss">
     @use "../style/abstracts" as *;
