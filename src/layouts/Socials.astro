@@ -1,0 +1,67 @@
+---
+import socials from '@content/socials.json';
+
+
+---
+<style lang="scss">
+@use '../style/abstracts' as *;
+.social{
+  position: relatve;
+  width: 100%;
+  float: left;
+  text-align: center;
+  z-index: 1;
+
+  @include for-desktop-up{
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: auto;
+    text-align: left;
+  }
+}
+.link{
+  padding: 12px;
+  display: block;
+  float: left;
+  margin-bottom: 12px;
+  color: $font-dark-color;
+  @include animate(color);
+
+  &:hover,
+  &:focus{
+    color: $blue-regular;
+  }
+}
+
+.item{
+  display: inline-block;
+
+  @include for-desktop-up{
+    clear: both;
+    float: left;
+  }
+}
+img{
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+svg{
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+</style>
+
+<div class="social">
+    {socials.map((item) => (
+        <div class={"item item-" + item.name}>
+            <a class="link" href={ item.url } title={"Isle of LAN auf"+ item.name } aria-label={"Isle of LAN auf"+ item.name } rel="noopener" target="_blank">
+              <img src={"/icons/"+ item.name  +"-brands.svg"} title={item.name}>
+            </a>
+        </div>
+    ))}
+</div>
