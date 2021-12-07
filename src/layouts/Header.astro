@@ -1,5 +1,7 @@
 ---
-import Navigation from './Navigation.astro';
+import Navigation from '@layouts/Navigation.astro';
+import ResponsiveNavigation from '@layouts/ResponsiveNavigation.astro';
+
 ---
 <style lang="scss">
     @use "../style/abstracts" as *;
@@ -26,7 +28,44 @@ import Navigation from './Navigation.astro';
             width: 176px;
         }
     }
+
+    .toggle{
+      @include for-tablet-landscape-up{
+        display: none;
+      }
+      width: 48px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-icon{
+        display: block;
+        position: relative;
+        height: 2px;
+        width: 24px;
+        background-color: white;
+        &::before,
+        &::after{
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-color: white;
+          left: 0;
+        }
+
+        &::before{
+            top: -7px;
+        }
+        &::after{
+            bottom: -7px;
+        }
+    }
+
 </style>
+
 <header class="header">
     <div class="container">
         <div class="logo">
@@ -35,5 +74,16 @@ import Navigation from './Navigation.astro';
             </a>
         </div>
         <Navigation/>
+        <div class="toggle" id="responsive-navigation-toggle">
+            <span class="toggle-icon"></span>
+        </div>
     </div>
 </header>
+<ResponsiveNavigation/>
+
+<script>
+document.getElementById('responsive-navigation-toggle').addEventListener('click', function(){
+  this.classList.toggle('active');
+  document.getElementsByTagName('body')[0].classList.toggle('nav-active');
+});
+</script>
