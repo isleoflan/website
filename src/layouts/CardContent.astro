@@ -1,0 +1,21 @@
+<section class="card-content background-yellow">
+  <div class="container container--flex">
+    <div class="container__inner container__inner--column">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 100px 0;
+  }
+  h2 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+</style>

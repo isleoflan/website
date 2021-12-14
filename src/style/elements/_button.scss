@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 9px 45px;
+  border: 3px solid $font-dark-color;
+  color: $font-dark-color;
+  text-decoration: none;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: $font-bold;
+  cursor: pointer;
+  outline: none;
+  background: white;
+
+  @include animate(box-shadow);
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $font-dark-color;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    @include animate(all);
+  }
+
+  &:hover,
+  &:active {
+    @include box-shadow;
+  }
+  &:active {
+    color: $font-light-color;
+    &::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    position: relative;
+  }
+}

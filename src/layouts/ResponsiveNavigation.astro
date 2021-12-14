@@ -1,0 +1,94 @@
+---
+import navigation from "../content/navigation.json";
+
+function shouldAppendActiveClass(item) {
+  return Astro.site.pathname == item.link;
+}
+function setSubLevelClass(item) {
+  return item.sub?.length ? "has-sub-level" : "has-no-sublevel";
+}
+---
+
+<div class="responsive__navigation">
+  <div class="responsive__naviggation__inner">
+    <div class="container">
+      <nav class="responsive__navigation__nav">
+        {navigation.map((navigationItems) => (
+          <ul>
+            {navigationItems.map((item) => (
+              <li class={setSubLevelClass(item)}>
+                <a
+                  href={item.link}
+                  rel={item.rel}
+                  title={item.name}
+                  target={item.target && item.target}
+                  class={shouldAppendActiveClass(item) && "active"}
+                >
+                  {item.name}
+                </a>
+                {item.sub && (
+                  <ul>
+                    {item.sub?.map((subItem) => (
+                      <li>
+                        <a href={subItem.link} rel={subItem.rel} title={subItem.name}>
+                          {subItem.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        ))}
+      </nav>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../style/abstracts" as *;
+
+  body {
+    &.nav-active {
+      .responsive__navigation {
+        display: block;
+        @include for-tablet-landscape-up {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .responsive__navigation {
+    display: none;
+
+    position: fixed;
+    top: 95px;
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    padding-top: 44px;
+    @include linear-gradient-blue();
+
+    font-size: 1.3rem;
+
+    font-weight: $font-bold;
+    color: $font-light-color;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        width: 100%;
+        a {
+          display: block;
+          width: 100%;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+</style>

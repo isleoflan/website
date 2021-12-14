@@ -1,17 +1,60 @@
 ---
 // Component Imports
-import MainHeader from '../components/MainHead.astro';
-import Header from '../layouts/Header.astro';
-import NextEventHeader from '../layouts/NextEventHeader.astro';
-import QuickInformations from '../layouts/QuickInformations.astro';
+
+import MainHeader from "@components/MainHead.astro";
+import Header from "@layouts/Header.astro";
+import NextEventHeader from "@layouts/NextEventHeader.astro";
+
+import CardContent from "@layouts/CardContent.astro";
+
+import Footer from "@layouts/Footer.astro";
+
+import QuickInformations from "@content/cards/QuickInformations.astro";
+
+const title = `Isle Of LAN 2022`;
+const description = ``;
+const keywords = ["Isle of LAN", "Sulgen"];
+const type = "website";
+const canonicalURL = Astro.href;
 ---
+
 <html lang="de">
-<head>
-   <MainHeader/>
-</head>
-<body>
-   <Header/>
-   <NextEventHeader/>
-   <QuickInformations/>
-</body>
+  <head>
+    <MainHeader {title} {description} keywords={keywords.join(", ")} image="" {type} {canonicalURL}
+    />
+  </head>
+  <body>
+    <Header class="home" />
+    <NextEventHeader />
+    <CardContent>
+      <QuickInformations />
+    </CardContent>
+
+    <Footer />
+  </body>
 </html>
+
+<script>
+  function headerResize() {
+    var scrollY = window.scrollY;
+    var header = document.getElementById("header");
+
+    if (scrollY > 40) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  headerResize();
+
+  window.addEventListener("scroll", function (e) {
+    headerResize();
+  });
+</script>
+
+<style lang="scss">
+  body {
+    padding-top: 0 !important;
+  }
+</style>
