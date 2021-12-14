@@ -15,7 +15,8 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   ],
   buildOptions: {
     site: "https://isleoflan.ch",
-    sitemap: true,
+    pageUrlFormat: 'directory',
+    sitemap: true
   },
   markdownOptions: {
     parser: ["@astrojs/markdown-remark"],
