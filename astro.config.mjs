@@ -9,16 +9,16 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   // Comment out "renderers: []" to enable Astro's default component support.
-  
+
   renderers: [
     // "@astrojs/renderer-vue"
   ],
   buildOptions: {
-    site: 'https://isleoflan.ch',
+    site: "https://isleoflan.ch",
     sitemap: true,
   },
   markdownOptions: {
-    parser: ['@astrojs/markdown-remark']
+    parser: ["@astrojs/markdown-remark"],
   },
   vite: {
     resolve: {
@@ -28,8 +28,8 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
         "@content": "/src/content",
         "@layouts": "/src/layouts",
         "@pages": "/src/pages",
-        "@styles": "/src/styles"
+        "@styles": "/src/styles",
       },
     },
-  }
+  },
 });

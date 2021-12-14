@@ -1,63 +1,66 @@
 ---
-import navigation from '@content/footernavigation.json';
-import Socials from '@layouts/Socials.astro';
+import navigation from "@content/footernavigation.json";
+import Socials from "@layouts/Socials.astro";
 ---
-<style lang="scss">
-    @use '../style/abstracts' as *;
-    footer{
-        position: relative;
-        display: flex;
-        width: 100%;
-        border-top: 10px solid white;
-        padding: 50px 0;
-        color: $font-light-color;
-
-        @include linear-gradient-yellow;
-    }
-    .footer-container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .logo{
-        width: 102px;
-        display: none;
-        @include for-tablet-landscape-up{
-            display: block;
-        }
-        @include for-desktop-up{
-            width: 176px;
-        }
-    }
-    nav{
-        ul{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-    }
-</style>
 
 <footer>
   <div class="container footer-container">
     <div class="logo">
       <a href="/" title="Isle of LAN">
-        <img src="/images/iol_white.svg" alt="Isle of LAN">
+        <img src="/images/iol_white.svg" alt="Isle of LAN" />
       </a>
     </div>
     {navigation.map((navigationItems) => (
-        <nav>
-            <ul>
-                {navigationItems.map((item) => (
-                    <li>
-                        <a href={item.link} rel={item.rel} title={item.name}>{item.name}</a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          {navigationItems.map((item) => (
+            <li>
+              <a href={item.link} rel={item.rel} title={item.name}>
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     ))}
   </div>
 </footer>
 
-<Socials /> 
+<Socials />
+
+<style lang="scss">
+  @use "../style/abstracts" as *;
+  footer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    border-top: 10px solid white;
+    padding: 50px 0;
+    color: $font-light-color;
+
+    @include linear-gradient-yellow;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .logo {
+    width: 102px;
+    display: none;
+    @include for-tablet-landscape-up {
+      display: block;
+    }
+    @include for-desktop-up {
+      width: 176px;
+    }
+  }
+  nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+</style>

@@ -1,21 +1,21 @@
 name: Deploy Isle of LAN website
-on: 
-  push: 
-    branches: 
+on:
+  push:
+    branches:
       - master
 
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
-      
+
       - name: Install Node.Js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
-      
+          node-version: "14.x"
+
       - name: Install npm dependencies
         run: npm ci
 
@@ -24,7 +24,7 @@ jobs:
 
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
-        env: 
+        env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           SOURCE: dist/
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}

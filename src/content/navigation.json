@@ -1,53 +1,53 @@
 [
-    [
+  [
+    {
+      "name": "IOL 2022",
+      "link": "/informations",
+      "sub": [
         {
-            "name": "IOL 2022",
-            "link": "/informations",
-            "sub": [
-                {
-                    "name": "Turniere",
-                    "link": "/informations/tournaments"
-                },
-                {
-                    "name": "Teilnehmer",
-                    "link": "/informations/participants"
-                },
-                {
-                    "name": "Hallenplan",
-                    "link": "/informations/location"
-                },
-                {
-                    "name": "Sponsoren",
-                    "link": "/informations/sponsors"
-                }
-            ]
+          "name": "Turniere",
+          "link": "/informations/tournaments"
         },
         {
-            "name": "FAQ",
-            "link": "/frequently-asked-questions",
-            "sub": [
-                {
-                    "name": "Sicherheit",
-                    "link": "/scanner"
-                }
-            ]
+          "name": "Teilnehmer",
+          "link": "/informations/participants"
         },
         {
-            "name": "Helfer werden",
-            "link": "https://forms.gle/RJHeKKEtoprJSFtk9",
-            "target": "_blank",
-            "rel": "noopener"
+          "name": "Hallenplan",
+          "link": "/informations/location"
+        },
+        {
+          "name": "Sponsoren",
+          "link": "/informations/sponsors"
         }
-    ],
-    [
+      ]
+    },
+    {
+      "name": "FAQ",
+      "link": "/frequently-asked-questions",
+      "sub": [
         {
-            "name": "Dashboard",
-            "link": "https://user.isleoflan.ch/",
-            "target": "_blank"
-        },
-        {
-            "name": "Tickets",
-            "link": "/tickets"
+          "name": "Sicherheit",
+          "link": "/scanner"
         }
-    ]
+      ]
+    },
+    {
+      "name": "Helfer werden",
+      "link": "https://forms.gle/RJHeKKEtoprJSFtk9",
+      "target": "_blank",
+      "rel": "noopener"
+    }
+  ],
+  [
+    {
+      "name": "Dashboard",
+      "link": "https://user.isleoflan.ch/",
+      "target": "_blank"
+    },
+    {
+      "name": "Tickets",
+      "link": "/tickets"
+    }
+  ]
 ]

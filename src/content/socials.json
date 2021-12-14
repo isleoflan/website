@@ -1,26 +1,26 @@
 [
-    {
-        "name": "facebook",
-        "url": "https://www.facebook.com/isleoflan"
-    },
-    {
-        "name": "instagram",
-        "url": "https://www.instagram.com/isleoflan"
-    },
-    {
-        "name": "twitter",
-        "url": "https://twitter.com/isleoflan"
-    },
-    {
-        "name": "twitch",
-        "url": "https://www.twitch.tv/isleoflan"
-    },
-    {
-        "name": "youtube",
-        "url": "https://www.youtube.com/channel/UCxlV4tFoYPrAiwXbYpx5UGw"
-    },
-    {
-        "name": "discord",
-        "url": "https://discord.gg/2zHbw9f"
-    }
+  {
+    "name": "facebook",
+    "url": "https://www.facebook.com/isleoflan"
+  },
+  {
+    "name": "instagram",
+    "url": "https://www.instagram.com/isleoflan"
+  },
+  {
+    "name": "twitter",
+    "url": "https://twitter.com/isleoflan"
+  },
+  {
+    "name": "twitch",
+    "url": "https://www.twitch.tv/isleoflan"
+  },
+  {
+    "name": "youtube",
+    "url": "https://www.youtube.com/channel/UCxlV4tFoYPrAiwXbYpx5UGw"
+  },
+  {
+    "name": "discord",
+    "url": "https://discord.gg/2zHbw9f"
+  }
 ]

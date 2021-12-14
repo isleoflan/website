@@ -1,36 +1,36 @@
 [
-    [
-        {
-            "name": "Turniere",
-            "link": "/informationen/turniere.html"
-        },
-        {
-            "name": "Teilnehmer",
-            "link": "/informationen/teilnehmer.html"
-        }
-    ],
-    [
-        {
-            "name": "Sponsoren",
-            "link": "/informationen/sponsoren.html"
-        },
-        {
-            "name": "FAQ",
-            "link": "/frequently-asked-questions.html"
-        }
-    ],
-    [
-        {
-            "name": "Kontakt",
-            "link": "mailto:support@isleoflan.ch"
-        },
-        {
-            "name": "AGB",
-            "link": "/agb.html"
-        },
-        {
-            "name": "Rechtliches",
-            "link": "/impressum.html"
-        }
-    ]
+  [
+    {
+      "name": "Turniere",
+      "link": "/informationen/turniere.html"
+    },
+    {
+      "name": "Teilnehmer",
+      "link": "/informationen/teilnehmer.html"
+    }
+  ],
+  [
+    {
+      "name": "Sponsoren",
+      "link": "/informationen/sponsoren.html"
+    },
+    {
+      "name": "FAQ",
+      "link": "/frequently-asked-questions.html"
+    }
+  ],
+  [
+    {
+      "name": "Kontakt",
+      "link": "mailto:support@isleoflan.ch"
+    },
+    {
+      "name": "AGB",
+      "link": "/agb.html"
+    },
+    {
+      "name": "Rechtliches",
+      "link": "/impressum.html"
+    }
+  ]
 ]

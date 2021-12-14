@@ -1,41 +1,45 @@
 ---
-import {Markdown} from 'astro/components';
-import Card from '../../components/Card.astro';
+import { Markdown } from "astro/components";
+import Card from "../../components/Card.astro";
 
-import eventDate from '@content/event-date.json';
+import eventDate from "@content/event-date.json";
 
 const startDate = new Date(eventDate.start);
 const endDate = new Date(eventDate.end);
 
 const startDay = startDate.getDate();
 const endDay = endDate.getDate();
-const month = endDate.toLocaleString('default', { month: 'long' });
+const month = endDate.toLocaleString("default", { month: "long" });
 const year = endDate.getFullYear();
 ---
+
 <Markdown>
-    ## Infos zur Isle of LAN {year} - "Crowned"
-    <Card>
-        ### Wann & Wo?
+  ## Infos zur Isle of LAN {year} - "Crowned"
 
-        Vom {`${startDay}. - ${endDay}. ${month} ${year}`} werden wir im Auholzsaal in Sulgen TG die Leitungen glühen lassen und zusammen ein tolles Wochenende verbringen.
-        
-        Ein Wochenende voller freundlicher Rivalitäten, Teamgeist und gemütlicher Gamer-Atmosphäre.
-    </Card>
-    <Card>
-        ### Wie?
+  <Card>
+  ### Wann & Wo?
 
-        An die Isle of LAN musst du lediglich deinen Computer, Maus, Tastatur und Headset mitnehmen. 
-        Um den Rest kümmern wir uns. An deinem Platz ist Strom mit 3 Steckplätzen, ein LAN-Kabel mit einem Gigabit-Zugang zu unserem Netzwerk vorverlegt. 
-        Dein Platz ist ca. 90cm breit und 80cm tief.
-        
-        Ein Stuhl steht natürlich auch bereit, wobei du natürlich deinen eigenen, bequemeren Chair mitnehmen darfst.
-    </Card>
-    <Card>
-        ### IOL in Kürze
+  Vom {`${startDay}. - ${endDay}. ${month} ${year}`} werden wir im Auholzsaal in Sulgen TG die Leitungen glühen lassen und zusammen ein tolles Wochenende verbringen.
 
-        * Plätze: 50 Plätze
-        * Location: <a href="https://www.google.com/maps/place/Auholzsaal%2FVerwaltung/@47.5350744,9.1832273,18z/data=!3m1!4b1!4m5!3m4!1s0x479ae55f25af3519:0x5f4fbf8a115e4f7d!8m2!3d47.5350726!4d9.1843216" title="auf Googlemaps anzeigen" target="_blank" rel="nofollow">Auholzsaal Sulgen</a>
-        * Preis: 50 CHF
-        * Mindestalter: 16 Jahre (Teilnehmer unter 18 Jahren müssen ein von den Eltern unterschriebenes Formular mitbringen. Dieses wird mit der Bestellbestätigung mitgeschickt, wenn es dich betrifft!)
+  Ein Wochenende voller freundlicher Rivalitäten, Teamgeist und gemütlicher Gamer-Atmosphäre.
+  </Card>
+  <Card>
+
+  ### Wie?
+
+  An die Isle of LAN musst du lediglich deinen Computer, Maus, Tastatur und Headset mitnehmen.
+  Um den Rest kümmern wir uns. An deinem Platz ist Strom mit 3 Steckplätzen, ein LAN-Kabel mit einem Gigabit-Zugang zu unserem Netzwerk vorverlegt.
+  Dein Platz ist ca. 90cm breit und 80cm tief.
+
+  Ein Stuhl steht natürlich auch bereit, wobei du natürlich deinen eigenen, bequemeren Chair mitnehmen darfst.
+  </Card>
+  <Card>
+
+  ### IOL in Kürze
+
+  - Plätze: 50 Plätze
+  - Location: <a href="https://www.google.com/maps/place/Auholzsaal%2FVerwaltung/@47.5350744,9.1832273,18z/data=!3m1!4b1!4m5!3m4!1s0x479ae55f25af3519:0x5f4fbf8a115e4f7d!8m2!3d47.5350726!4d9.1843216" title="auf Googlemaps anzeigen" target="_blank" rel="nofollow">Auholzsaal Sulgen</a>
+  - Preis: 50 CHF
+  - Mindestalter: 16 Jahre (Teilnehmer unter 18 Jahren müssen ein von den Eltern unterschriebenes Formular mitbringen. Dieses wird mit der Bestellbestätigung mitgeschickt, wenn es dich betrifft!)
     </Card>
 </Markdown>

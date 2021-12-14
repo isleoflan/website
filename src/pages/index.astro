@@ -1,42 +1,35 @@
 ---
 // Component Imports
 
-import MainHeader from '@components/MainHead.astro';
-import Header from '@layouts/Header.astro';
-import NextEventHeader from '@layouts/NextEventHeader.astro';
+import MainHeader from "@components/MainHead.astro";
+import Header from "@layouts/Header.astro";
+import NextEventHeader from "@layouts/NextEventHeader.astro";
 
-import CardContent from '@layouts/CardContent.astro';
+import CardContent from "@layouts/CardContent.astro";
 
-import Footer from '@layouts/Footer.astro';
+import Footer from "@layouts/Footer.astro";
 
-import QuickInformations from '@content/cards/QuickInformations.astro';
-
+import QuickInformations from "@content/cards/QuickInformations.astro";
 
 const title = `Isle Of LAN 2022`;
 const description = ``;
-const keywords = ['Isle of LAN', 'Sulgen'];
-const type = 'website';
+const keywords = ["Isle of LAN", "Sulgen"];
+const type = "website";
 const canonicalURL = Astro.href;
 ---
 
 <html lang="de">
-<head>
-   <MainHeader
-      title={title}
-      description={description}
-      keywords={keywords.join(', ')}
-      image=""
-      type={type}
-      canonicalURL={canonicalURL}
-   />
-</head>
-<body>
-   <Header/>
-   <NextEventHeader/>
-   <CardContent>
-      <QuickInformations/>
-   </CardContent>
+  <head>
+    <MainHeader {title} {description} keywords={keywords.join(", ")} image="" {type} {canonicalURL}
+    />
+  </head>
+  <body>
+    <Header />
+    <NextEventHeader />
+    <CardContent>
+      <QuickInformations />
+    </CardContent>
 
-   <Footer/>
-</body>
+    <Footer />
+  </body>
 </html>

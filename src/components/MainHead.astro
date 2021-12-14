@@ -1,44 +1,47 @@
 ---
 export interface Props {
-    title: string;
-    description: string;
-    image?: string;
-    type?: string;
-    keywords?: string;
-    canonicalURL: string;
+  title: string;
+  description: string;
+  image?: string;
+  type?: string;
+  keywords?: string;
+  canonicalURL: string;
 }
 
-const {title, description, keywords, image, type, canonicalURL} = Astro.props as Props;
+const { title, description, keywords, image, type, canonicalURL } = Astro.props as Props;
 ---
 
 <!-- Common -->
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <title>{title}</title>
-<meta name="description" content={description}>
-<meta name="keywords" content={keywords}>
-<link rel="icon" href="/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Changa:wght@300;700&display=swap">
-
-<style lang="scss" global>
-   @use '../style/base';
-</style>
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<link rel="icon" href="/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Changa:wght@300;700&display=swap"
+/>
 
 <!-- Sitemap -->
-<link rel="sitemap" href="/sitemap.xml">
+<link rel="sitemap" href="/sitemap.xml" />
 
 <!-- SEO -->
-<link rel="canonical" href={canonicalURL}>
+<link rel="canonical" href={canonicalURL} />
 
 <!-- OpenGraph -->
-<meta property="og:title" content={title}>
-<meta property="og:description" content={description}>
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
 {image && (<meta property="og:image" content={new URL(image, canonicalURL)}>)}
 
 <!-- Twitter -->
-<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'}>
-<meta name="twitter:site" content="@isleoflan">
-<meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={description}>
+<meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+<meta name="twitter:site" content="@isleoflan" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
 {image && (<meta name="twitter:image" content={image}>)}
+
+<style lang="scss" global>
+  @use "../style/base";
+</style>

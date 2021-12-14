@@ -1,34 +1,29 @@
 ---
 // Component Imports
-import MainHeader from '../../components/MainHead.astro';
-import Header from '../../layouts/Header.astro';
-import CardContent from '../../layouts/CardContent.astro';
-import Footer from '../../layouts/Footer.astro';
+import MainHeader from "../../components/MainHead.astro";
+import Header from "../../layouts/Header.astro";
+import CardContent from "../../layouts/CardContent.astro";
+import Footer from "../../layouts/Footer.astro";
 
-import Sponsors from '../../content/cards/Sponsors.astro';
+import Sponsors from "../../content/cards/Sponsors.astro";
 
 const title = `Sponsoren`;
 const description = ``;
-const keywords = ['Sponsoren','Isle of LAN', 'Sulgen'];
-const type = 'website';
+const keywords = ["Sponsoren", "Isle of LAN", "Sulgen"];
+const type = "website";
 const canonicalURL = Astro.href;
 ---
+
 <html lang="de">
-<head>
-   <MainHeader
-      title={title}
-      description={description}
-      keywords={keywords.join(', ')}
-      image=""
-      type={type}
-      canonicalURL={canonicalURL}
-   />
-</head>
-<body>
-   <Header/>
-   <CardContent>
+  <head>
+    <MainHeader {title} {description} keywords={keywords.join(", ")} image="" {type} {canonicalURL}
+    />
+  </head>
+  <body>
+    <Header />
+    <CardContent>
       <Sponsors />
-   </CardContent>
-   <Footer/>
-</body>
+    </CardContent>
+    <Footer />
+  </body>
 </html>
