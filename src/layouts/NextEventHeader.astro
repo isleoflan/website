@@ -1,5 +1,7 @@
 ---
-import Countdown from "../components/Countdown.astro";
+import Countdown from "@components/Countdown.astro";
+import Tickets from "@content/home-c2a/tickets.astro";
+
 import eventDate from "@content/event-date.json";
 
 const title = 'Isle of LAN &ndash; "Crowned"';
@@ -30,12 +32,15 @@ const location = `${startDay}. - ${endDay}. ${month} ${year}<br> im Auholzsaal i
       <Countdown />
       <h4>{location}</h4>
     </div>
-    <div class="right">TICKET DASHBOARD NEWSLETTER</div>
+    <div class="right">
+      <Tickets />
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   @use "../style/abstracts" as *;
+
   .next-event {
     min-height: 100vh;
     width: 100%;

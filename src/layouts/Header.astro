@@ -1,9 +1,16 @@
 ---
 import Navigation from "@layouts/Navigation.astro";
 import ResponsiveNavigation from "@layouts/ResponsiveNavigation.astro";
+
+export interface Props {
+  class?: string;
+}
+
+const { class: _class = "" } = Astro.props;
+const headerClass = [_class, "header"].join(" ");
 ---
 
-<header class="header">
+<header class={headerClass} id="header">
   <div class="container">
     <div class="logo">
       <a href="/" title="Isle of LAN">
@@ -23,17 +30,26 @@ import ResponsiveNavigation from "@layouts/ResponsiveNavigation.astro";
     this.classList.toggle("active");
     document.getElementsByTagName("body")[0].classList.toggle("nav-active");
   });
+
+  headerResize();
 </script>
 
 <style lang="scss">
   @use "../style/abstracts" as *;
 
+  body {
+    padding-top: 88px;
+    @include for-tablet-landscape-up {
+      padding-top: 123px;
+    }
+  }
+
   .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
+    float: left;
     padding: 20px 0;
     z-index: 100;
 
@@ -86,7 +102,7 @@ import ResponsiveNavigation from "@layouts/ResponsiveNavigation.astro";
     }
   }
   .home {
-    .header {
+    &.header {
       background-color: transparent;
       background-image: none;
       @include for-desktop-up {

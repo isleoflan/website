@@ -1,10 +1,10 @@
 ---
 import { Markdown } from "astro/components";
-import Card from "../../components/Card.astro";
+import Card from "@components/Card.astro";
 ---
 
 <Markdown>
-  ## Turniere
+  # Turniere
 
   <Card>
   ### Allgemein
@@ -13,3 +13,7 @@ import Card from "../../components/Card.astro";
   Die Preise werden noch bekannt gegeben. Ebenfalls werden die Spielmodi und Regeln noch zu einen späteren Zeitpunkt bekannt gegeben.
   </Card>
 </Markdown>
+
+<style lang="scss">
+  @import '../../style/elements/markdown';
+</style>
