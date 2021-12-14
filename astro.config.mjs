@@ -19,7 +19,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     sitemap: true
   },
   markdownOptions: {
-    parser: ["@astrojs/markdown-remark"],
+   // parser: ["@astrojs/markdown-remark"],
   },
   vite: {
     resolve: {
