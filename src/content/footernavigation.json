@@ -2,21 +2,21 @@
   [
     {
       "name": "Turniere",
-      "link": "/informationen/turniere.html"
+      "link": "/informationen/turniere"
     },
     {
       "name": "Teilnehmer",
-      "link": "/informationen/teilnehmer.html"
+      "link": "/informationen/teilnehmer"
     }
   ],
   [
     {
       "name": "Sponsoren",
-      "link": "/informationen/sponsoren.html"
+      "link": "/informationen/sponsoren"
     },
     {
       "name": "FAQ",
-      "link": "/frequently-asked-questions.html"
+      "link": "/frequently-asked-questions"
     }
   ],
   [
@@ -26,11 +26,11 @@
     },
     {
       "name": "AGB",
-      "link": "/agb.html"
+      "link": "/agb"
     },
     {
       "name": "Rechtliches",
-      "link": "/impressum.html"
+      "link": "/impressum"
     }
   ]
 ]
