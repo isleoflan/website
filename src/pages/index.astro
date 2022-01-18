@@ -34,25 +34,6 @@ const canonicalURL = Astro.href;
   </body>
 </html>
 
-<script>
-  function headerResize() {
-    var scrollY = window.scrollY;
-    var header = document.getElementById("header");
-
-    if (scrollY > 40) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  }
-
-  headerResize();
-
-  window.addEventListener("scroll", function (e) {
-    headerResize();
-  });
-</script>
-
 <style lang="scss">
   body {
     padding-top: 0 !important;
