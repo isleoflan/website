@@ -3,31 +3,106 @@ import { Markdown } from "astro/components";
 import Card from "../../components/Card.astro";
 
 import sponsorTypes from "@content/sponsors.json";
-
 ---
 
-<Markdown>
-  # Sponsoren
+<div>
+  <Markdown>
+    # Sponsoren
 
-  <Card>
-  ### Danke!
-
-  Vielen Dank an alle unsere Sponsoren, ohne welche Isle of LAN nicht möglich wäre!
-  </Card>
-
-</Markdown>
-
-{sponsorTypes.map((type) => (
-  <h2>{type.title}</h2>
-  {type.entries.map((sponsor) => (
     <Card>
-      <img src={sponsor.image} alt={sponsor.name}>
+    ### Danke!
+
+    Vielen Dank an alle unsere Sponsoren, ohne welche Isle of LAN nicht möglich wäre!
     </Card>
-  ))}
-))}
-
-
+  </Markdown>
+  <section class="sponsors">
+    {sponsorTypes.map((type) => (
+      <h2>{type.title}</h2>
+      <article class={type.class}>
+        {type.entries.map((sponsor) => (
+          <Card>
+            <a href={sponsor.link} target="_blank" rel="noopener">
+              <img src={sponsor.image} alt={sponsor.name} />
+            </a>
+          </Card>
+        ))}
+      </article>
+    ))}
+  </section>
+</div>
 
 <style lang="scss">
-  @import '../../style/elements/markdown';
+  @use "../../style/abstracts" as *;
+  @use "../../style/elements/markdown";
+
+  img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sponsors {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    article {
+      margin-bottom: 4rem;
+    }
+
+    :global(.card) {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: center;
+
+      a {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .gold {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3em;
+
+    @include for-tablet-portrait-up {
+      grid-template-columns: 1fr 1fr;
+      :global(.card:nth-child(1)) {
+        grid-area: 1 / 1 / span 1 / span 2;
+      }
+    }
+  }
+
+  .silver {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3em;
+    @include for-tablet-portrait-up {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .patreon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 3em;
+
+    :global(.card) {
+      width: 100%;
+      @include for-tablet-portrait-up {
+        max-width: 40%;
+      }
+    }
+  }
 </style>

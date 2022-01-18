@@ -2,7 +2,6 @@
 import Navigation from "@layouts/Navigation.astro";
 import ResponsiveNavigation from "@layouts/ResponsiveNavigation.astro";
 
-
 export interface Props {
   class?: string;
 }
@@ -18,7 +17,7 @@ const headerClass = [_class, "header"].join(" ");
         <img src="/images/iol_white.svg" alt="Isle of LAN" />
       </a>
     </div>
-   <Navigation />
+    <Navigation />
     <div class="toggle" id="responsive-navigation-toggle">
       <span class="toggle-icon"></span>
     </div>
@@ -27,7 +26,6 @@ const headerClass = [_class, "header"].join(" ");
 <ResponsiveNavigation />
 
 <script>
-
   function headerResize() {
     var scrollY = window.scrollY;
     var header = document.getElementById("header");
@@ -45,11 +43,10 @@ const headerClass = [_class, "header"].join(" ");
     this.classList.toggle("active");
     document.getElementsByTagName("body")[0].classList.toggle("nav-active");
   });
-  
+
   window.addEventListener("scroll", function (e) {
     headerResize();
   });
-
 </script>
 
 <style lang="scss">

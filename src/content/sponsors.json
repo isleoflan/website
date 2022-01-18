@@ -1,46 +1,49 @@
 [
   {
     "title": "Gold-Sponsoren",
+    "class": "gold",
     "entries": [
+      {
+        "name": "be quiet!",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/bequiet.svg",
+        "link": "https://www.bequiet.com/de"
+      },
       {
         "name": "init7",
         "image": "https://cdn.isleoflan.ch/main/sponsors/init7.svg",
-        "link": ""
+        "link": "https://www.init7.net/"
       },
       {
         "name": "Raiffesen Mittelthurgau",
         "image": "https://cdn.isleoflan.ch/main/sponsors/raiffeisen-mittelthurgau.svg",
-        "link": ""
-      },
-      {
-        "name": "be quiet!",
-        "image": "https://cdn.isleoflan.ch/main/sponsors/bequiet.svg",
-        "link": ""
+        "link": "https://www.raiffeisen.ch/mittelthurgau/de/ueber-uns/ihre-bank-vor-ort.html"
       }
     ]
   },
   {
     "title": "Silber-Sponsoren",
+    "class": "silver",
     "entries": [
       {
         "name": "drinkdirect.ch",
         "image": "https://cdn.isleoflan.ch/main/sponsors/drinkdirect.svg",
-        "link": ""
+        "link": "https://www.drinkdirect.ch/"
       },
       {
         "name": "Fleischmann Immobilien AG",
         "image": "https://cdn.isleoflan.ch/main/sponsors/fleischmann.svg",
-        "link": ""
+        "link": "https://www.fleischmann.ch/"
       }
     ]
   },
   {
     "title": "Gönner",
+    "class": "patreon",
     "entries": [
       {
         "name": "Bischofszell Nahrungsmittel AG",
         "image": "https://cdn.isleoflan.ch/main/sponsors/bina.png",
-        "link": ""
+        "link": "https://www.bina.ch/bischofszell-nahrungsmittel-ag/"
       }
     ]
   }
