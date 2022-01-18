@@ -42,7 +42,8 @@
   [
     {
       "name": "Tickets",
-      "link": "/tickets"
+      "link": "https://shop.isleoflan.ch",
+      "target": "_blank"
     }
   ]
 ]
