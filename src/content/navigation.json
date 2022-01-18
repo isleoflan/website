@@ -27,14 +27,14 @@
       "link": "/frequently-asked-questions",
       "sub": [
         {
-          "name": "Sicherheit",
-          "link": "/scanner"
+          "name": "Corona Informationen",
+          "link": "/corona"
         }
       ]
     },
     {
       "name": "Helfer werden",
-      "link": "https://forms.gle/RJHeKKEtoprJSFtk9",
+      "link": "https://forms.gle/vWotY7JVh4YEeq7h7",
       "target": "_blank",
       "rel": "noopener"
     }

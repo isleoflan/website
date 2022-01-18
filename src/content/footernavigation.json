@@ -2,21 +2,27 @@
   [
     {
       "name": "Turniere",
-      "link": "/informationen/turniere"
+      "link": "/informations/tournaments"
     },
     {
       "name": "Teilnehmer",
-      "link": "/informationen/teilnehmer"
+      "link": "/informations/participants"
     }
   ],
   [
     {
       "name": "Sponsoren",
-      "link": "/informationen/sponsoren"
+      "link": "/informations/sponsors"
     },
     {
       "name": "FAQ",
       "link": "/frequently-asked-questions"
+    },
+    {
+      "name": "Weitere Fragen?",
+      "link": "https://isleoflan.atlassian.net/servicedesk/customer/portal/1",
+      "target": "_blank",
+      "rel": "noopener"
     }
   ],
   [
