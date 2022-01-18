@@ -41,11 +41,6 @@
   ],
   [
     {
-      "name": "Dashboard",
-      "link": "https://user.isleoflan.ch/",
-      "target": "_blank"
-    },
-    {
       "name": "Tickets",
       "link": "/tickets"
     }
