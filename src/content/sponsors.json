@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Gold-Sponsoren",
+    "entries": [
+      {
+        "name": "init7",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/init7.svg",
+        "link": ""
+      },
+      {
+        "name": "Raiffesen Mittelthurgau",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/raiffeisen-mittelthurgau.svg",
+        "link": ""
+      },
+      {
+        "name": "be quiet!",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/bequiet.svg",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "title": "Silber-Sponsoren",
+    "entries": [
+      {
+        "name": "drinkdirect.ch",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/drinkdirect.svg",
+        "link": ""
+      },
+      {
+        "name": "Fleischmann Immobilien AG",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/fleischmann.svg",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "title": "Gönner",
+    "entries": [
+      {
+        "name": "Bischofszell Nahrungsmittel AG",
+        "image": "https://cdn.isleoflan.ch/main/sponsors/bina.png",
+        "link": ""
+      }
+    ]
+  }
+]

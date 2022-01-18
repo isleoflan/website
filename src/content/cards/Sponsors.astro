@@ -1,6 +1,9 @@
 ---
 import { Markdown } from "astro/components";
 import Card from "../../components/Card.astro";
+
+import sponsorTypes from "@content/sponsors.json";
+
 ---
 
 <Markdown>
@@ -11,7 +14,19 @@ import Card from "../../components/Card.astro";
 
   Vielen Dank an alle unsere Sponsoren, ohne welche Isle of LAN nicht möglich wäre!
   </Card>
+
 </Markdown>
+
+{sponsorTypes.map((type) => (
+  <h2>{type.title}</h2>
+  {type.entries.map((sponsor) => (
+    <Card>
+      <img src={sponsor.image} alt={sponsor.name}>
+    </Card>
+  ))}
+))}
+
+
 
 <style lang="scss">
   @import '../../style/elements/markdown';
