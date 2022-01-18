@@ -1,5 +1,5 @@
 ---
-import navigation from "../content/navigation.json";
+import navigation from "@content/navigation.json";
 
 function shouldAppendActiveClass(item) {
   return Astro.site.pathname == item.link;
@@ -9,40 +9,39 @@ function setSubLevelClass(item) {
 }
 ---
 
+
 <div class="responsive__navigation">
-  <div class="responsive__naviggation__inner">
-    <div class="container">
-      <nav class="responsive__navigation__nav">
-        {navigation.map((navigationItems) => (
-          <ul>
-            {navigationItems.map((item) => (
-              <li class={setSubLevelClass(item)}>
-                <a
-                  href={item.link}
-                  rel={item.rel}
-                  title={item.name}
-                  target={item.target && item.target}
-                  class={shouldAppendActiveClass(item) && "active"}
-                >
-                  {item.name}
-                </a>
-                {item.sub && (
-                  <ul>
-                    {item.sub?.map((subItem) => (
-                      <li>
-                        <a href={subItem.link} rel={subItem.rel} title={subItem.name}>
-                          {subItem.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        ))}
-      </nav>
-    </div>
+  <div class="container">
+    <nav class="responsive__navigation__nav">
+      {navigation.map((navigationItems) => (
+        <ul>
+          {navigationItems.map((item) => (
+            <li class={setSubLevelClass(item)}>
+              <a
+                href={item.link}
+                rel={item.rel}
+                title={item.name}
+                target={item.target && item.target}
+                class={shouldAppendActiveClass(item) && "active"}
+              >
+                {item.name}
+              </a>
+              {item.sub && (
+                <ul>
+                  {item.sub?.map((subItem) => (
+                    <li>
+                      <a href={subItem.link} rel={subItem.rel} title={subItem.name}>
+                        {subItem.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      ))}
+    </nav>
   </div>
 </div>
 
