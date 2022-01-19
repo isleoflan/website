@@ -7,6 +7,10 @@
   ],
   [
     {
+      "name": "Corona",
+      "link": "/corona"
+    },
+    {
       "name": "Sponsoren",
       "link": "/informations/sponsors"
     },
