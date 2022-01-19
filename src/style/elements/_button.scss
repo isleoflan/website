@@ -26,12 +26,14 @@
     width: 0;
     height: 0;
     @include animate(all);
+    z-index: 10;
   }
 
   &:hover,
   &:active {
     @include box-shadow;
   }
+  
   &:active {
     color: $font-light-color;
     &::before {
@@ -44,5 +46,6 @@
 
   &__text {
     position: relative;
+    z-index: 20;
   }
 }

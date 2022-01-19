@@ -3,7 +3,7 @@
 
 <h1>Jetzt Ticket sichern!</h1>
 <p>
-  Der Vorverkauf hat gestartet! Sichere dir jetzt eines der begrenzten Tickets für die erste Isle of
+  Der Vorverkauf hat gestartet! Sichere dir jetzt eines der begrenzten Tickets für die zweite Isle of
   LAN!
 </p>
 
@@ -13,5 +13,69 @@
   class="button button--white"
   target="_blank"
 >
+  <span class="progress">
+    <span id="ticket-progress" class="progress-inner"></span>
+  </span>
   <span class="button__text">Ja, ich will!</span>
+  
 </a>
+<div id="counter"></div>
+
+
+<script>
+  const counter = document.querySelector('#counter');
+  const progress = document.querySelector('#ticket-progress');
+
+  // fetch ticket data
+  fetch('https://api.shop.isleoflan.ch/v1/tickets/availability')
+  .then((response) => {
+    if(response.status >= 200 && response.status <= 299){
+      return response.json();
+    }else{
+      throw new Error(response);
+    }
+  })
+  .then((response) => {
+    const data = response.data;
+
+    if(data.free === 0){
+      counter.innerText = `wir sind ausverkauft`;
+      progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 50}%`;
+    }else{
+       counter.innerText = `noch ${data.free} Tickets`;
+       progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 25}%`;
+    }
+  }).catch((error) => {
+  })
+</script>
+
+<style lang="scss">
+@use '../../style/abstracts' as *;
+  .button{
+    position: relative;
+  }
+  .progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    
+
+    &-inner{
+      @include linear-gradient-yellow();
+      @include skew-horizontal();
+      position: absolute;
+      height: 100%;
+      left: -25%;
+      top: 0;
+    }
+  }
+  #counter{
+    margin-top: 0.2rem;
+    font-weight: $font-bold;
+    font-size: 0.7rem;
+  }
+</style>

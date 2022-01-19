@@ -1,0 +1,94 @@
+name: 'IOL Website Continuous Integration'
+
+on:
+  # Triggers the workflow on push or pull request events for the master and develop branch
+  push:
+    branches:
+      - master
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    environment: production
+
+    # Run the jop on ubuntu because we can
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Set up local PHP for atomic deployment and status page updates
+      - name: setup local php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          extensions: curl
+          tools: composer
+
+      # setup nodeJs for this container
+      - name: setup nodeJs for this container
+        uses: actions/setup-node@master
+        with:
+          node-version: 16
+
+      # starting the maintenance mode
+      - name: start maintenance mode
+        id: statuspage
+        run: |
+          composer init --stability="dev"
+          composer require "stui/statuspage-io:*"
+          echo -n "::set-output name=INCIDENT_ID::" && php vendor/bin/statuspage.php maintenance schedule --title "Updating the Website to the newest version" --description $'We\'re updating the Website to the next version, so we can provide you with new features (and possibly bugs).\r\nAs we\'re using atomic deployments, no interruption should be perceivable.\r\nWhen the update is done, this maintenance message will automatically be resolved.' --component "${{ secrets.STATUSPAGE_COMPONENT_ID }}" --start $(date --date='1 minute' --iso-8601=seconds) --end $(date --date='10 minutes' --iso-8601=seconds) --incident-status "in_progress" --api-key "${{ secrets.STATUSPAGE_API_KEY }}" --page-id "${{ secrets.STATUSPAGE_PAGE_ID }}"
+    
+      # freshly install the node dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Application
+        run: npm run build
+
+      # get the current timestamp for the atomic deployment
+      - name: get current timestamp
+        id: deployment-id
+        run: echo "::set-output name=DEPLOYMENT_ID::$(date +%s)"  
+
+      - name: create new folder with current timestamp
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            mkdir "${{ secrets.BASE_PATH }}${{ secrets.DEPLOYMENTS_FOLDER }}/${{ steps.deployment-id.outputs.DEPLOYMENT_ID }}"  
+
+      # deploy freshly built application to our server because this makes us happy.
+      - name: Deploy application
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: dist/
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: "${{ secrets.BASE_PATH }}${{ secrets.DEPLOYMENTS_FOLDER }}/${{ steps.deployment-id.outputs.DEPLOYMENT_ID }}"
+
+      # after the application is uploaded lint the new folder
+      - name: update symlink
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.BASE_PATH }}
+            rm "${{ secrets.BASE_PATH }}dev"
+            ln -s "${{ secrets.DEPLOYMENTS_FOLDER }}/${{ steps.deployment-id.outputs.DEPLOYMENT_ID }}" dev
+
+       # end the maintenance mode
+      - name: end maintenance mode
+        if: always()
+        run: |
+          php vendor/bin/statuspage.php maintenance update --incident "${{ steps.statuspage.outputs.INCIDENT_ID }}" --description "The update has been completed. Thank you for your patience and sorry for the possible inconveniences. The Website is now running again as intended" --incident-status "completed" --api-key "${{ secrets.STATUSPAGE_API_KEY }}" --page-id "${{ secrets.STATUSPAGE_PAGE_ID }}"
