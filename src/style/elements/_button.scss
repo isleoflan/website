@@ -33,6 +33,7 @@
   &:active {
     @include box-shadow;
   }
+  
   &:active {
     color: $font-light-color;
     &::before {
