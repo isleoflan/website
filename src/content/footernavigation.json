@@ -3,13 +3,13 @@
     {
       "name": "Turniere",
       "link": "/informations/tournaments"
-    },
-    {
-      "name": "Teilnehmer",
-      "link": "/informations/participants"
     }
   ],
   [
+    {
+      "name": "Corona",
+      "link": "/corona"
+    },
     {
       "name": "Sponsoren",
       "link": "/informations/sponsors"

@@ -7,6 +7,7 @@ import NextEventHeader from "@layouts/NextEventHeader.astro";
 
 import CardContent from "@layouts/CardContent.astro";
 
+import Games from "@layouts/Games.astro";
 import Footer from "@layouts/Footer.astro";
 
 import QuickInformations from "@content/cards/QuickInformations.astro";
@@ -20,8 +21,7 @@ const canonicalURL = Astro.href;
 
 <html lang="de">
   <head>
-    <MainHeader {title} {description} keywords={keywords.join(", ")} image="" {type} {canonicalURL}
-    />
+    <MainHeader {title} {description} keywords={keywords.join(", ")} image="" {type} {canonicalURL} />
   </head>
   <body>
     <Header class="home" />
@@ -29,6 +29,7 @@ const canonicalURL = Astro.href;
     <CardContent>
       <QuickInformations />
     </CardContent>
+    <Games />
 
     <Footer />
   </body>

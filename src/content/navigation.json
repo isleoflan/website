@@ -9,12 +9,8 @@
           "link": "/informations/tournaments"
         },
         {
-          "name": "Teilnehmer",
-          "link": "/informations/participants"
-        },
-        {
           "name": "Hallenplan",
-          "link": "/informations/location"
+          "link": "/informations/seatplan"
         },
         {
           "name": "Sponsoren",
@@ -27,7 +23,7 @@
       "link": "/frequently-asked-questions",
       "sub": [
         {
-          "name": "Corona Informationen",
+          "name": "Corona",
           "link": "/corona"
         }
       ]
@@ -42,7 +38,8 @@
   [
     {
       "name": "Tickets",
-      "link": "/tickets"
+      "link": "https://shop.isleoflan.ch",
+      "target": "_blank"
     }
   ]
 ]

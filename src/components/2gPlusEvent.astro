@@ -1,0 +1,70 @@
+---
+
+---
+<section class="ribbon">
+  <a href="/corona" title="2G+ Event">2G+ Event</a>
+</section>
+
+<style lang="scss">
+  @use "../style/abstracts" as *;
+
+  .ribbon{
+    background: linear-gradient(45deg,#4a248c 50%,#af1aac 100%);
+    // background: linear-gradient(100deg,#ff7f40 40%,#ff2b82 100%);
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 250px;
+    
+    text-align: center;
+    position: relative;
+    transform-origin: center center;
+    transform: rotate(45deg) translateX(-30%) translateY(70%) scale(1);
+    position: fixed;
+    
+    
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+
+    @include animate(all);
+
+    @include for-tablet-portrait-up{
+      bottom: auto;
+      left: auto;
+      top: 0;
+      right: 0;
+      transform: rotate(45deg) translateX(30%) translateY(-30%) scale(1);
+    }
+
+
+    a{
+      width: 100%;
+      padding: 0.5em 0;
+      display: block;
+    }
+
+    &:before,
+    &:after{
+      content: '';
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background-color: #FFFFFF;
+      position: absolute;
+    }
+    &::before{
+      top: 3px;
+    }
+    &:after{
+      bottom: 3px;
+    }
+
+    &:hover{
+      transform: rotate(45deg) translateX(-30%) translateY(70%) scale(1.2);
+
+      @include for-tablet-portrait-up{
+        transform: rotate(45deg) translateX(30%) translateY(-30%) scale(1.2);
+      }
+    }
+  }
+</style>

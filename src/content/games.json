@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Counter-Strike: Global Offensive",
+    "overlay": {
+      "title": "Counter-Strike: Global Offensive",
+      "description": "2 vs 2"
+    },
+    "img": "https://cdn.isleoflan.ch/main/games/screens/csgo.jpg"
+  },
+  {
+    "name": "VALORANT",
+    "overlay": {
+      "title": "VALORANT",
+      "description": "3 vs 3"
+    },
+    "img": "https://cdn.isleoflan.ch/main/games/screens/valorant.jpg"
+  },
+  {
+    "name": "Rocket League: 1v1",
+    "overlay": {
+      "title": "Rocket League",
+      "description": "1 vs 1"
+    },
+    "img": "https://cdn.isleoflan.ch/main/games/screens/rocket-league.jpg"
+  },
+  {
+    "name": "Super Smash Bros. Ultimate",
+    "overlay": {
+      "title": "Super Smash Bros. Ultimate",
+      "description": "1 vs 1"
+    },
+    "img": "https://cdn.isleoflan.ch/main/games/screens/ssbu.jpg"
+  }
+]
