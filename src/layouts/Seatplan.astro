@@ -3,6 +3,15 @@
 
 <section class="seatplan container container--flex">
   <h1>Hallenplan</h1>
+
+  <div class="seatplan__claninfo">
+    <div class="seatplan__claninfo--text">
+      <h3>Möchtest du mit deinem Clan kommen?</h3>
+      <p>Eröffne ein Support-Ticket mit dem Typ "Clan Reservation" <a href="https://isleoflan.atlassian.net/servicedesk/customer/portal/1" title="Support-Portal" target="_blank" rel="noopener">auf unserem Support-Portal</a> und wir reservieren für einen limitierten Zeitraum einen von euch gewünschten Block an Plätzen, welche dann nur von euren Mitgliedern ausgewählt werden können. </p>
+      <p class="text--small">Vorerst sind bis zum 6. Februar 2022 exklusiv Clan-Reservationen möglich.</p>
+    </div>
+  </div>
+
   <div class="seatplan__svg">
     <svg
       width="1332"
@@ -208,6 +217,28 @@
 
       svg {
         width: 100%;
+      }
+    }
+
+    &__claninfo {
+      background: linear-gradient(45deg,#4a248c 50%,#af1aac 100%);
+      font-weight: bold;
+      color: #FFFFFF;
+      width: 60%;
+      padding: 10px;
+      text-align: center;
+      margin: 40px 0;
+
+      .seatplan__claninfo--text{
+        width: 100%;
+        padding: 20px 80px;
+        background: #FFFFFF;
+        color: #000000;
+
+        .text--small {
+          font-size: .7rem;
+          margin-top: 1rem;
+        }
       }
     }
   }
