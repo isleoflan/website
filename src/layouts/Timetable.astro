@@ -1,0 +1,279 @@
+---
+const times = Array(24).fill(null).map((value, index) => ({
+  id: `time-${index}`,
+  value: (index).toString().padStart(2, '0') + ':00'
+}));
+
+console.log(times);
+---
+
+<section class="card-content background-yellow">
+  <div class="container container--flex">
+    <h1>Zeitplan Tourniere</h1>
+    <section class="timetable">
+      <h2 class="day day-1">Freitag</h2>
+      <h2 class="day day-2">Sammstag</h2>
+      <h2 class="day day-3">Sonntag</h2>
+      {times.map((time) => (
+        <div id={time.id} class="time">
+        {time.value}
+        <span class="ruler"></span>
+        </div>
+      ))}
+
+      <!-- Admin -->
+      <div id="a1" class="game admin" data-start="17" data-length="1" data-day="fr">
+        Start IOL 2022 - "Honored"
+      </div>
+      <div id="a2" class="game admin" data-start="11" data-length="1" data-day="so">
+        Siegerehrungen
+      </div>
+      <div id="a3" class="game admin" data-start="13" data-length="11" data-day="so">
+        curfew
+      </div>
+
+      <!-- Valorant -->
+      <div id="v1" class="game valorant" data-start="18.5" data-length="3.5" data-day="fr" data-width="1">
+        Qualifiers<br>
+        Bo3
+      </div>
+      <div id="v2" class="game valorant" data-start="1" data-length="2" data-day="sa" data-width="1">
+        Quarters<br>
+        Bo3
+      </div>
+      <div id="v3" class="game valorant" data-start="13" data-length="2" data-day="sa" data-width="1">
+        Semis<br>
+        Bo3
+      </div>
+      <div id="v4" class="game valorant" data-start="20" data-length="4" data-day="sa">
+        Finals<br>
+        Bo5
+      </div>
+
+      <!-- CS:GO -->
+      <div id="c1" class="game cs-go" data-start="23" data-length="1" data-day="fr" data-width="1">
+        Qualifiers<br>
+        Bo3
+      </div>
+      <div id="c2" class="game cs-go" data-start="0" data-length="3.5" data-day="sa">
+        Qualifiers<br>
+        Bo3
+      </div>
+      <div id="c3" class="game cs-go" data-start="10" data-length="2.5" data-day="sa" data-width="1">
+        Quarters<br>
+        Bo3
+      </div>
+      <div id="c4" class="game cs-go" data-start="17" data-length="2" data-day="sa">
+        Semis<br>
+        Bo3
+      </div>
+      <div id="c5" class="game cs-go" data-start="0" data-length="2" data-day="so">
+        Finals<br>
+        Bo5
+      </div>
+
+      <!-- Rocket League -->
+      <div id="r1" class="game rocket-league" data-start="20.5" data-length="3.5" data-day="fr" data-width="1">
+        Qualifiers<br>
+        Bo5
+      </div>
+      <div id="r2" class="game rocket-league" data-start="9.5" data-length="1" data-day="sa" data-width="1">
+        Quarters<br>
+        Bo5
+      </div>
+      <div id="r3" class="game rocket-league" data-start="12" data-length="1.5" data-day="sa" data-width="1">
+        Semis<br>
+        Bo5
+      </div>
+      <div id="r4" class="game rocket-league" data-start="15" data-length="2" data-day="sa">
+        Finals<br>
+        Bo7
+      </div>
+
+    </section>
+  </div>
+</section>
+
+<script>
+  function setCurrentTime(){
+    const hour = new Date().getHours();
+    const minutes = new Date().getMinutes();
+
+    Array.from(document.getElementsByClassName('time')).forEach((el) => el.classList.remove('active'));
+    document.querySelector(`#time-${hour}`).classList.add('active');
+
+    document.querySelector(`#time-${hour} .ruler`).style.top = ((minutes * 100) / 60).toString() + '%';
+  }
+
+  setCurrentTime();
+
+  setInterval(() => {
+    setCurrentTime();
+  }, 5000);
+</script>
+
+<style lang="scss">
+@use "sass:math";
+@import "../style/abstracts";
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 100px 0;
+  }
+  h2 {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+
+  .ruler{
+
+  }
+
+  .timetable{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(6, 1fr);
+    grid-template-rows: 1fr repeat(48, 24px);
+    gap: 0.5em;
+  }
+
+  .game{
+    background: white;
+    border-radius: 18px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column-end: span 2;
+    position: relative;
+    @include box-shadow();
+    text-align: center;
+  }
+
+  .valorant{
+    border: 5px solid #ff4655;
+  }
+  .cs-go{
+    border: 5px solid #F3A823;
+  }
+  .rocket-league{
+    border: 5px solid #019ff2;
+  }
+
+  .admin{
+    // border: 5px solid white;
+    background: linear-gradient(45deg,#4a248c 50%,#af1aac 100%);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  #a2{
+    background: linear-gradient(100deg,#ff7f40 40%,#ff2b82 100%);
+  }
+
+  .time{
+    
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: -0.25em;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: white;
+    }
+
+    &.active{
+      color: $blue-regular;
+
+      .ruler{
+        @include linear-gradient-blue();
+        z-index: 1;
+        height:2px;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include animate(all);
+
+        &::before,
+        &::after{
+          content: "";
+          height: 11px;
+          width: 11px;
+          border-radius: 50%;
+          position: absolute;
+          top: -5px;
+        }
+        &::before{
+          left: -10px;
+          background: $blue-dark;
+        }
+        &::after{
+          right: -10px;
+          background: $blue-regular;
+        }
+      }
+      
+    }
+  }
+
+  .day{
+    text-align: center;
+  }
+
+  .day-1{
+    grid-area: 1 / 2 / span 1 / span 2;
+  }
+  .day-2{
+    grid-area: 1 / 4 / span 1 / span 2;
+  }
+  .day-3{
+    grid-area: 1 / 6 / span 1 / span 2;
+  }
+  @for $i from 0 to 24 {
+    #time-#{$i}{
+      grid-area: #{($i + $i + 2)} / 1 / span 2 / span 7;
+    }
+  }
+
+  @for $i from 0 to 48{
+    [data-start="#{math.div($i, 2)}"]{
+      grid-row-start: #{$i + 2};
+    }
+  } 
+
+  [data-day="fr"]{
+    grid-column-start: 2;
+  }
+  [data-day="sa"]{
+    grid-column-start: 4;
+  }
+  [data-day="so"]{
+    grid-column-start: 6;
+  }
+  @for $i from 1 to 23{
+    [data-length="#{$i / 2}"]{
+      grid-row-end: span #{$i};
+    }
+  }
+  [data-width="1"]{
+    grid-column-end: span 1;
+  }
+
+  // Fixed
+  #r1{
+    grid-column-start: 3;
+  }
+
+  #r2,
+  #r3{
+    grid-column-start: 5;
+  }
+</style>
