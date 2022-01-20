@@ -41,6 +41,9 @@
     if(data.free === 0){
       counter.innerText = `wir sind ausverkauft`;
       progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 50}%`;
+    }else if(data.free === 1){
+      counter.innerText = `noch ${data.free} Ticket`;
+      progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 25}%`;
     }else{
        counter.innerText = `noch ${data.free} Tickets`;
        progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 25}%`;
