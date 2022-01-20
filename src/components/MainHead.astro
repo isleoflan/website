@@ -33,14 +33,24 @@ const { title, description, keywords, image, type, canonicalURL } = Astro.props 
 <!-- OpenGraph -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{image && (<meta property="og:image" content={new URL(image, canonicalURL)}>)}
+{image && (<meta property="og:image" content={new URL(image, canonicalURL)} />)}
 
 <!-- Twitter -->
 <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
 <meta name="twitter:site" content="@isleoflan" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-{image && (<meta name="twitter:image" content={image}>)}
+{image && (<meta name="twitter:image" content={image} />)}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145591715-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145591715-1');
+</script>
 
 <style lang="scss" global>
   @use "../style/base";
