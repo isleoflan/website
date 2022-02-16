@@ -84,8 +84,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ${{ secrets.BASE_PATH }}
-            rm "${{ secrets.BASE_PATH }}dev"
-            ln -s "${{ secrets.DEPLOYMENTS_FOLDER }}/${{ steps.deployment-id.outputs.DEPLOYMENT_ID }}" dev
+            rm "${{ secrets.BASE_PATH }}live"
+            ln -s "${{ secrets.DEPLOYMENTS_FOLDER }}/${{ steps.deployment-id.outputs.DEPLOYMENT_ID }}" live
 
        # end the maintenance mode
       - name: end maintenance mode

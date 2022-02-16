@@ -1,6 +1,7 @@
 ---
 import Countdown from "@components/Countdown.astro";
 import Tickets from "@content/home-c2a/tickets.astro";
+import Corona from "@content/home-c2a/corona.astro";
 
 import eventDate from "@content/event-date.json";
 
@@ -37,7 +38,12 @@ const location = `${startDay}. - ${endDay}. ${month} ${year}<br> im Auholzsaal i
       <h4>{location}</h4>
     </div>
     <div class="right">
-      <Tickets />
+    <article>
+      <Tickets />    
+    </article>
+    <article>
+      <Corona />
+    </article>
     </div>
   </div>
 </section>
@@ -98,6 +104,9 @@ const location = `${startDay}. - ${endDay}. ${month} ${year}<br> im Auholzsaal i
     padding-top: 170px;
     height: 100vh;
     color: $font-dark-color;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
 
     @include for-desktop-up {
       height: initial;
