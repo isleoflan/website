@@ -1,5 +1,3 @@
----
----
 
 <h1>Jetzt Ticket sichern!</h1>
 <p>
@@ -19,7 +17,7 @@
   <span class="button__text">Ja, ich will!</span>
   
 </a>
-<div id="counter"></div>
+<div id="counter">&nbsp;</div>
 
 
 <script>
@@ -48,6 +46,7 @@
        counter.innerText = `noch ${data.free} Tickets`;
        progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 25}%`;
     }
+    counter.style.opacity = 1;
   }).catch((error) => {
   })
 </script>
@@ -74,11 +73,18 @@
       height: 100%;
       left: -25%;
       top: 0;
+      width: 0;
+
+      transition: width 0.5s ease-in-out;
     }
   }
   #counter{
+    display: block;
     margin-top: 0.2rem;
     font-weight: $font-bold;
     font-size: 0.7rem;
+    opacity: 0;
+
+    transition: opacity 0.15s ease-in-out 0.35s;
   }
 </style>
