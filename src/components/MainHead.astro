@@ -16,7 +16,7 @@ const { title, description, keywords, image, type, canonicalURL } = Astro.props 
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="/favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,23 +34,25 @@ const { title, description, keywords, image, type, canonicalURL } = Astro.props 
 <!-- OpenGraph -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-{image && (<meta property="og:image" content={new URL(image, canonicalURL)} />)}
+{image && <meta property="og:image" content={new URL(image, canonicalURL)} />}
 
 <!-- Twitter -->
 <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
 <meta name="twitter:site" content="@isleoflan" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-{image && (<meta name="twitter:image" content={image} />)}
+{image && <meta name="twitter:image" content={image} />}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145591715-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'UA-145591715-1');
+  gtag("config", "UA-145591715-1");
 </script>
 
 <style lang="scss" global>

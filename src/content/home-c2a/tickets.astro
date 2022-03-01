@@ -1,8 +1,7 @@
-
 <h1>Jetzt Ticket sichern!</h1>
 <p>
-  Der Vorverkauf hat gestartet! Sichere dir jetzt eines der begrenzten Tickets für die zweite Isle of
-  LAN!
+  Der Vorverkauf hat gestartet! Sichere dir jetzt eines der begrenzten Tickets für die zweite Isle
+  of LAN!
 </p>
 
 <a
@@ -15,48 +14,46 @@
     <span id="ticket-progress" class="progress-inner"></span>
   </span>
   <span class="button__text">Ja, ich will!</span>
-  
 </a>
 <div id="counter">&nbsp;</div>
 
-
 <script>
-  const counter = document.querySelector('#counter');
-  const progress = document.querySelector('#ticket-progress');
+  const counter = document.querySelector("#counter");
+  const progress = document.querySelector("#ticket-progress");
 
   // fetch ticket data
-  fetch('https://api.shop.isleoflan.ch/v1/tickets/availability')
-  .then((response) => {
-    if(response.status >= 200 && response.status <= 299){
-      return response.json();
-    }else{
-      throw new Error(response);
-    }
-  })
-  .then((response) => {
-    const data = response.data;
+  fetch("https://api.shop.isleoflan.ch/v1/tickets/availability")
+    .then((response) => {
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        throw new Error(response);
+      }
+    })
+    .then((response) => {
+      const data = response.data;
 
-    if(data.free === 0){
-      counter.innerText = `wir sind ausverkauft`;
-      progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 50}%`;
-    }else if(data.free === 1){
-      counter.innerText = `noch ${data.free} Ticket`;
-      progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 25}%`;
-    }else{
-       counter.innerText = `noch ${data.free} Tickets`;
-       progress.style.width = `${(((data.total - data.free) * 100) / data.total) + 25}%`;
-    }
-    counter.style.opacity = 1;
-  }).catch((error) => {
-  })
+      if (data.free === 0) {
+        counter.innerText = `wir sind ausverkauft`;
+        progress.style.width = `${((data.total - data.free) * 100) / data.total + 50}%`;
+      } else if (data.free === 1) {
+        counter.innerText = `noch ${data.free} Ticket`;
+        progress.style.width = `${((data.total - data.free) * 100) / data.total + 25}%`;
+      } else {
+        counter.innerText = `noch ${data.free} Tickets`;
+        progress.style.width = `${((data.total - data.free) * 100) / data.total + 25}%`;
+      }
+      counter.style.opacity = 1;
+    })
+    .catch((error) => {});
 </script>
 
 <style lang="scss">
-@use '../../style/abstracts' as *;
-  .button{
+  @use "../../style/abstracts" as *;
+  .button {
     position: relative;
   }
-  .progress{
+  .progress {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -64,9 +61,8 @@
     width: 100%;
     overflow: hidden;
     z-index: 0;
-    
 
-    &-inner{
+    &-inner {
       @include linear-gradient-yellow();
       @include skew-horizontal();
       position: absolute;
@@ -78,7 +74,7 @@
       transition: width 0.5s ease-in-out;
     }
   }
-  #counter{
+  #counter {
     display: block;
     margin-top: 0.2rem;
     font-weight: $font-bold;
