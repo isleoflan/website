@@ -5,7 +5,7 @@ import Corona from "@content/home-c2a/corona.astro";
 
 import eventDate from "@content/event-date.json";
 
-const title = 'Isle of LAN &ndash; "Honored"';
+const title = '';
 const subtitle = "Die LAN-Party in der Ostschweiz!";
 
 const startDate = new Date(eventDate.start);
@@ -16,7 +16,8 @@ const endDay = endDate.getDate();
 const month = endDate.toLocaleString("default", { month: "long" });
 const year = endDate.getFullYear();
 
-const location = `${startDay}. - ${endDay}. ${month} ${year}<br> im Auholzsaal in Sulgen`;
+const location1 = `${startDay}. - ${endDay}. ${month} ${year}`;
+const location2 = 'im Auholzsaal in Sulgen';
 ---
 
 <section class="next-event">
@@ -32,10 +33,10 @@ const location = `${startDay}. - ${endDay}. ${month} ${year}<br> im Auholzsaal i
   </div>
   <div class="container">
     <div class="left">
-      <h1>{title}</h1>
+      <h1>Isle of LAN &ndash; "Honored"</h1>
       <h3>{subtitle}</h3>
       <Countdown />
-      <h4>{location}</h4>
+      <h4>{location1}<br>{location2}</h4>
     </div>
     <div class="right">
     <article>
