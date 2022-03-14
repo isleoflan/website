@@ -14,7 +14,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   // Comment out "renderers: []" to enable Astro's default component support.
 
   renderers: [
-    // "@astrojs/renderer-vue"
+    "@astrojs/renderer-vue"
   ],
   buildOptions: {
     site: "https://isleoflan.ch",

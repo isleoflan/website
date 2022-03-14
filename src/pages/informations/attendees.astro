@@ -5,7 +5,7 @@ import Header from "@layouts/Header.astro";
 import CardContent from "@layouts/CardContent.astro";
 import Footer from "@layouts/Footer.astro";
 
-import Attendees from "@layouts/Attendees.astro";
+import Attendees from "@layouts/Attendees.vue";
 
 const title = `Teilnehmer`;
 const description = ``;
@@ -22,7 +22,7 @@ const canonicalURL = Astro.href;
   <body>
     <Header />
     <CardContent>
-      <Attendees />
+      <Attendees client:visible/>
     </CardContent>
     <Footer />
   </body>
