@@ -3,7 +3,10 @@
     <h1>Teilnehmer</h1>
     <div class="list">
       <div class="card attendee" v-for="attendee in attendees" :key="attendee.id">
-        <img class="avatar" :src="attendee.avatar">
+        <div class="avatar">
+          <img :alt="attendee.username" :src="attendee.avatar">
+        </div>
+        
         <span class="name">
           <span :class="`status status-${attendee.status}`"></span>
           <span v-if="attendee.squad" class="squad">
@@ -72,7 +75,12 @@
     width: 30%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    padding: 10px;
     @include box-shadow;
+
+    img{
+      width: 100%;
+    }
   }
   
   .name{
