@@ -17,7 +17,7 @@ const month = endDate.toLocaleString("default", { month: "long" });
 const year = endDate.getFullYear();
 
 const location1 = `${startDay}. - ${endDay}. ${month} ${year}`;
-const location2 = 'im Auholzsaal in Sulgen';
+const location2 = 'in Sulgen TG';
 ---
 
 <section class="next-event">
@@ -33,7 +33,7 @@ const location2 = 'im Auholzsaal in Sulgen';
   </div>
   <div class="container">
     <div class="left">
-      <h1>Isle of LAN &ndash; "Honored"</h1>
+      <h1>Isle of LAN 2024</h1>
       <h3>{subtitle}</h3>
       <Countdown />
       <h4>{location1}<br>{location2}</h4>
@@ -41,9 +41,6 @@ const location2 = 'im Auholzsaal in Sulgen';
     <div class="right">
     <article>
       <Tickets />    
-    </article>
-    <article>
-      <Corona />
     </article>
     </div>
   </div>

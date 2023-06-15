@@ -1,25 +1,13 @@
 [
   [
     {
-      "name": "Turniere",
-      "link": "/informations/tournaments"
+      "name": "Über uns",
+      "link": "/verein/about-us"
     }
   ],
   [
     {
-      "name": "Corona",
-      "link": "/corona"
-    },
-    {
-      "name": "Sponsoren",
-      "link": "/informations/sponsors"
-    },
-    {
-      "name": "FAQ",
-      "link": "/frequently-asked-questions"
-    },
-    {
-      "name": "Weitere Fragen?",
+      "name": "Fragen?",
       "link": "https://isleoflan.atlassian.net/servicedesk/customer/portal/1",
       "target": "_blank",
       "rel": "noopener"

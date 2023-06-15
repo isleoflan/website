@@ -1,0 +1,29 @@
+---
+// Component Imports
+import MainHeader from "@components/MainHead.astro";
+import Header from "@layouts/Header.astro";
+import CardContent from "@layouts/CardContent.astro";
+import Footer from "@layouts/Footer.astro";
+
+import AboutUs from "@content/cards/AboutUs.astro";
+
+const title = `Über Isle of LAN`;
+const description = `Informationen über den Verein Isle of LAN`;
+const keywords = ["Über uns", "Isle of LAN", "Sulgen"];
+const type = "website";
+const canonicalURL = Astro.href;
+---
+
+<html lang="de">
+  <head>
+    <MainHeader {title} {description} keywords={keywords.join(", ")} image="" {type} {canonicalURL}
+    />
+  </head>
+  <body>
+    <Header />
+    <CardContent>
+      <AboutUs />
+    </CardContent>
+    <Footer />
+  </body>
+</html>

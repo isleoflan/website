@@ -1,49 +1,36 @@
 [
   [
     {
-      "name": "IOL 2022",
-      "link": "/informations",
+      "name": "IOL 2024",
+      "link": "/informations"
+    },
+    {
+      "name": "Verein",
+      "link": "/verein/about-us",
       "sub": [
         {
-          "name": "Turniere",
-          "link": "/informations/tournaments"
+          "name": "Über uns",
+          "link": "/verein/about-us"
         },
         {
-          "name": "Hallenplan",
-          "link": "/informations/seatplan"
-        },
-        {
-          "name": "Teilnehmer",
-          "link": "/informations/attendees"
-        },
-        {
-          "name": "Sponsoren",
-          "link": "/informations/sponsors"
+          "name": "Mitglied werden",
+          "link": "/verein/become-a-member"
         }
       ]
     },
     {
-      "name": "FAQ",
-      "link": "/frequently-asked-questions",
+      "name": "Vergangene Events",
+      "link": "/past-events/iol-2022-honored",
       "sub": [
         {
-          "name": "Corona",
-          "link": "/corona"
+          "name": "2022 - Honored",
+          "link": "/past-events/iol-2022-honored"
+        },
+        {
+          "name": "2020 - Crowned",
+          "link": "/past-events/iol-2020-crowned"
         }
       ]
-    },
-    {
-      "name": "Helfer werden",
-      "link": "https://forms.gle/vWotY7JVh4YEeq7h7",
-      "target": "_blank",
-      "rel": "noopener"
-    }
-  ],
-  [
-    {
-      "name": "Tickets",
-      "link": "https://shop.isleoflan.ch",
-      "target": "_blank"
     }
   ]
 ]
